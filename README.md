@@ -121,7 +121,7 @@ foo
 (let [foo 0]
   (for [i [1 2 3]
     (inc foo i))
-  (foo))
+  foo)
 ```
 `6`
 
