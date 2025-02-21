@@ -57,6 +57,26 @@ fib 0.634149815
 ```
 `3`
 
+### Quoting
+Any expression may be quoted by prefixing with `'`.
+```
+'(+ 1 2)
+```
+`'(+ 1 2)`
+
+A quoted list becomes a list of quoted items.
+```
+'[foo bar baz]
+```
+`['foo 'bar 'baz]`
+
+`,` may be used to unquote.
+```
+(let [foo '(+ 1 2)]
+  ,foo)
+```
+`3`
+
 ### Bindings
 Values may be bound to identifiers at compile time using `var`.
 
@@ -104,26 +124,6 @@ foo
   (foo))
 ```
 `6`
-
-### Quoting
-Any expression may be quoted by prefixing with `'`.
-```
-'(+ 1 2)
-```
-`'(+ 1 2)`
-
-A quoted list becomes a list of quoted items.
-```
-'[foo bar baz]
-```
-`['foo 'bar 'baz]`
-
-`,` may be used to unquote.
-```
-(let [foo '(+ 1 2)]
-  ,foo)
-```
-`3`
 
 ### Methods
 Methods may be defined using `^`.
