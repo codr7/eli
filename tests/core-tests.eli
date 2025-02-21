@@ -1,0 +1,170 @@
+(check 3
+  (do 1 2 3))
+
+(check 42
+  (var foo 42)
+  foo)
+
+(check (is 1 1 1))
+
+(check F
+  (is 1 1 2))
+
+(check (= 1 1 1))
+
+(check F
+  (= 1 1 2))
+
+(check 6
+  (+ 1 2 3))
+
+(check 2
+  (- 7 4 1))
+
+(check 24
+  (* 2 3 4))
+
+(check 3
+  (/ 18 2 3))
+
+(check 1
+  (if T 1))
+
+(check 2
+  (if T 1 2))
+
+(check _
+  (if F 1))
+
+(check _
+  (if F 1 2))
+
+(check 2
+  (if F 1 (else 2)))
+
+(check _
+  (if F 1 (else-if F 2 3)))
+
+(check 4
+  (if F 1 2 (else-if T 3 4)))
+
+(check ['foo 'bar 'baz]
+  '[foo bar baz])
+
+(check 42
+  (^foo [] Int 42)
+  (foo))
+
+(check 42
+  (^foo [a] Int a)
+  (foo 42))
+
+(check 42
+  (^foo [n] Int
+    (dec n) (dec n))
+
+  (foo 44))
+
+(check 3
+  (^foo [] Int
+    1 (return 2 3) 4)
+
+  (foo))
+
+(check 3628800
+  (^fact [acc n] Int
+    (if (= n 1) acc
+      (else (recall (* n acc) (- n 1)))))
+
+  (fact 1 10))
+
+(check 55
+  (^fib [n a b] Int
+    (if (> n 1) (recall (- n 1) b (+ a b))
+      (else (if (= n 0) a (else b)))))
+
+  (fib 10 0 1))
+
+(check 42
+  (let [foo 42] foo))
+
+(check 1:2
+  (let [i:j 1:2]
+    i:j))
+
+(do
+  (var foo 'foo)
+  (let [foo 'bar]
+    (check 'bar foo))
+  (check 'foo foo))
+
+(let [foo 0]
+  (for [i [1 2 3]
+        j [4 5 6]]
+    (inc foo (* i j)))
+  (check 32 foo))
+
+(do
+  (var foo 'foo)
+
+  (^baz [] _
+    foo)
+
+  (check 'foo (baz))
+
+  (let [foo 'bar]
+    (check 'bar (baz))))
+
+(check 123:4
+  (parse-int " 123def"))
+
+(check _:_
+  (parse-int "abc123"))
+
+(check 123:6
+    (parse-int "abc123def" 3))
+
+(check 1.234:5
+  (parse-decimal "1.234"))
+
+(check 1.0
+  (- 2.0 1.0))
+
+(check (- 1.0)
+  (- 1.0 2.0))
+
+(check 15.00
+  (* 1.5 10.0))
+
+(check 1.5
+  (/ 15.0 10.0))
+
+(check 2
+  ([1 2 3] 1))
+
+(check \b
+  ("abc" 1))
+
+(check 3
+  #[1 2 3])
+
+(check 3
+  #"abc")
+
+(check "ac"
+  (string/strip "abc" \b))
+
+(check (< [1 2 3] [1 3 4]))
+
+(do
+  (var foo '(+ 1 2))
+  (check (= ,foo (unquote foo))))
+
+(check [1 2 '(+ 1 2)]
+  (let [foo '[1 2 (+ 1 2)]] ,foo))
+
+(check 3
+  (^my-else-if ['cond 'body*] Any
+    (else (if ,cond ,body*)))
+
+  (if F (my-else-if T 1 2 3)))
