@@ -9,7 +9,7 @@ I've written a ton of implementations in different languages over the years, eac
 
 ## Implementations
 
-The following projects implement `eli` in different languges, some are more complete than others. Most work currently happens in [eli-java](https://github.com/codr7/eli-java). The goal is to gradually consolidate into semi-compatible production ready implementations.
+The following projects implement `eli` in different languges, some are more complete than others. Most work currently happens in [eli-java](https://github.com/codr7/eli-java). The goal is to gradually consolidate into code compatible production ready implementations.
 
 - [C#](https://github.com/codr7/sharpl)
 - [Java](https://github.com/codr7/eli-java)
