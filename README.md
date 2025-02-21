@@ -11,8 +11,13 @@ I've written a ton of implementations in different languages over the years, eac
 
 The following projects implement `eli` in different languges, some are more complete than others. Most work currently happens in [eli-java](https://github.com/codr7/eli-java). The goal is to gradually consolidate into code compatible production ready implementations.
 
+
+- [C](https://github.com/codr7/alisp)
 - [C#](https://github.com/codr7/sharpl)
+- [Common Lisp](https://github.com/codr7/claesp)
+- [Go](https://github.com/codr7/gfun)
 - [Java](https://github.com/codr7/eli-java)
+- [Swift](https://github.com/codr7/sweet)
 
 ## Benchmarks
 I decided early on that `python3` would make a reasonable performance target to aim for. While it has a definite head start by virtue of being implemented in a lower level language, it has a comparable level of dynamism and is very well known.
