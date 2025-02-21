@@ -1,4 +1,4 @@
-## eli-java
+## Embedded Lisp Interpreter
 
 ## Introduction
 `eli` represents the culmination of more than 15 years of research into designing and implementing an embedded Lisp interpreter.
