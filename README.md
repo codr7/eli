@@ -165,7 +165,7 @@ note that this results in `(+ 35 7)` being spliced into `foo`'s body at compile 
 
 #### Result
 When a result type is specified; the value of the last evaluated form is returned,
-otherwise ´_`.
+otherwise `_`.
 ```
 (^foo [x] _ 
   x)
@@ -175,7 +175,7 @@ otherwise ´_`.
 `_`
 
 #### Recursion
-`recall` may be used to jump to the start of the current method.
+`recall` may be used to rebind arguments and jump to the start of the current method.
 ```
 (^fib [n a b] Int
   (if (> n 1) 
@@ -187,7 +187,7 @@ otherwise ´_`.
 `55`
 
 #### Return
-`return` evaluates its arguments and exits the current method.
+`return` evaluates its arguments and immediately exits the current method.
 
 ```
 (^foo [] Int 1 (return 2 3) 4)
