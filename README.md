@@ -157,7 +157,7 @@ Prefixing arguments with `'` automatically quotes and passes the expression with
 `,` may be used to unquote,
 note that this results in `(+ 35 7)` being spliced into `foo`'s body at compile time.
 ```
-(^foo ['x] Expr ,x)
+(^foo ['x] Int ,x)
 
 (foo (+ 35 7))
 ```
