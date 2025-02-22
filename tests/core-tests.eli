@@ -168,3 +168,17 @@
     (else (if ,cond ,body*)))
 
   (if F (my-else-if T 1 2 3)))
+
+(check 42
+  (^foo [x*] Int
+    (+ x*))
+
+  (foo 35 7))
+
+(check 3
+  (^foo [x y] Int
+    (if (= x 1)
+      (recall [2 3]*))
+    y)
+
+  (foo 1 2))
