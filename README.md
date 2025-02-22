@@ -178,6 +178,7 @@ By default, the value of the last evaluated form is returned.
 
 ```
 (^foo [] 1 (return 2 3) 4)
+
 (foo)
 ```
 `3`
@@ -220,7 +221,7 @@ Methods returning pairs support call site destructuring.
 #### Return
 
 #### Lambdas
-Method definitions return the defined method, leaving out the name avoids binding.
+Method definitions always return the method as a value, leaving out the name avoids binding.
 
 ```
 (^_ [] 42)
