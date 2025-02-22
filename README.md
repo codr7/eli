@@ -164,8 +164,16 @@ note that this results in `(+ 35 7)` being spliced into `foo`'s body at compile 
 `42`
 
 #### Result
-When a result type is specified; the value of the last evaluated form is returned,
-otherwise `_`.
+When a result type is specified; the value of the last evaluated form is returned, otherwise `_`.
+
+```
+(^foo [x] Int 
+  x)
+  
+(foo 42)
+```
+`42`
+
 ```
 (^foo [x] _ 
   x)
@@ -176,11 +184,12 @@ otherwise `_`.
 
 #### Recursion
 `recall` may be used to rebind arguments and jump to the start of the current method.
+
 ```
 (^fib [n a b] Int
   (if (> n 1) 
     (recall (- n 1) b (+ a b)) 
-    (if (is n 0) a b)))
+    (if (= n 0) a b)))
 
 (fib 10 0 1)
 ```
