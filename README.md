@@ -125,6 +125,13 @@ foo
 ```
 `6`
 
+### Pairs
+Pairs of values may be created using `:`.
+
+```
+1:'foo
+```
+
 ### Methods
 Methods may be defined using `^`.
 
@@ -264,3 +271,74 @@ When called with one argument, the expected value is assumed to be `T`.
 ```
 (check (= 42 42))
 ```
+
+### Types
+
+#### Any
+`Any` is the root type.
+
+#### Bit (Any)
+The `Bit` type has two values, `T` and `F`.
+
+#### Call (Any)
+`Call` is the root type of all callable types.
+
+#### Char (Any)
+The `Char` type represents individual characters.
+`\a`
+
+#### Expr (Any)
+`Expr` represents quoted expressions.
+`'(+ 1 2)`
+
+#### Float (Any Num)
+`Float` represents floating point values with absolute precision.
+`1.23`
+
+#### Int (Any Num)
+`Int` values are 64 bit integers.
+`42`
+
+#### Iter (Any)
+`Iter` is the root type of all iterators.
+
+#### Lib (Any)
+`Lib` is the type of all libraries.
+
+#### List (Any Call Seq)
+A `List´ is a sequence of values.
+`[1 2 3`
+
+#### Macro (Any Call)
+`Macro` is the type of all macros.
+
+#### Maybe (Any Nil)
+`Maybe` represents optional values.
+
+#### Meta (Any)
+`Meta` is the root type of all types.
+
+#### Method (Any Call)
+`Method` is the type of all methods.
+
+#### Nil ()
+The `Nil` type represents missing values.
+`_`
+
+#### Pair (Any Call Seq)
+`Pair` represents pairs of values.
+`1:'foo`
+
+#### Seq (Any)
+`Seq` is the root type of all iterable types.
+
+#### String (Any Call Seq)
+A `String` is a sequence of `Char`s.
+`"abc"`
+
+#### Time (Any)
+A `Time` represents a duration of time.
+
+#### Timestamp (Any)
+A `Timestamp` represents a point in time.
+`(now)`

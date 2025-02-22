@@ -125,7 +125,7 @@
     (parse-int "abc123def" 3))
 
 (check 1.234:5
-  (parse-decimal "1.234"))
+  (parse-float "1.234"))
 
 (check 1.0
   (- 2.0 1.0))
