@@ -129,7 +129,7 @@ foo
 Methods may be defined using `^`.
 
 ```
-(^foo [x] Int 
+(^foo [x] 
   x)
   
 (foo 42)
@@ -139,7 +139,7 @@ Methods may be defined using `^`.
 #### Arguments
 Methods may be made to accept a variable number of arguments by suffixing the final argument with `*`.
 ```
-(^foo [x*] Int 
+(^foo [x*] 
   (+ x*))
   
 (foo 35 7)
@@ -147,7 +147,7 @@ Methods may be made to accept a variable number of arguments by suffixing the fi
 
 Prefixing arguments with `'` automatically quotes and passes the expression without evaluating at compile time.
 ```
-(^foo ['x] Expr 
+(^foo ['x] 
   x)
   
 (foo (+ 35 7))
@@ -157,36 +157,58 @@ Prefixing arguments with `'` automatically quotes and passes the expression with
 `,` may be used to unquote,
 note that this results in `(+ 35 7)` being spliced into `foo`'s body at compile time.
 ```
-(^foo ['x] Int ,x)
+(^foo ['x] ,x)
 
 (foo (+ 35 7))
 ```
 `42`
 
 #### Result
-When a result type is specified; the value of the last evaluated form is returned, otherwise `_`.
+By default, the value of the last evaluated form is returned.
 
 ```
-(^foo [x] Int 
+(^foo [x] 
   x)
   
 (foo 42)
 ```
 `42`
 
+`return` evaluates its arguments and jumps to the end of the current method.
+
 ```
-(^foo [x] _ 
-  x)
-  
-(foo 42)
+(^foo [] 1 (return 2 3) 4)
+(foo)
 ```
-`_`
+`3`
+
+Methods returning pairs support call site destructuring.
+
+```
+(^foo []
+  1:2:3)
+```
+
+```
+(foo:_)
+```
+`1`
+
+```
+(_:_:foo)
+```
+`3`
+
+```
+(_:foo)
+```
+`2:3`
 
 #### Recursion
 `recall` may be used to rebind arguments and jump to the start of the current method.
 
 ```
-(^fib [n a b] Int
+(^fib [n a b]
   (if (> n 1) 
     (recall (- n 1) b (+ a b)) 
     (if (= n 0) a b)))
@@ -196,19 +218,12 @@ When a result type is specified; the value of the last evaluated form is returne
 `55`
 
 #### Return
-`return` evaluates its arguments and immediately exits the current method.
-
-```
-(^foo [] Int 1 (return 2 3) 4)
-(foo)
-```
-`3`
 
 #### Lambdas
 Method definitions return the defined method, leaving out the name avoids binding.
 
 ```
-(^_ [] Int 42)
+(^_ [] 42)
 ```
 `(Method _)`
 
@@ -221,7 +236,7 @@ Note that this would trigger in a compile error without quoted arguments,
 since `else` is only defined inside `if`'s body.
 
 ```
-(^my-else-if ['cond 'body*] Any
+(^my-else-if ['cond 'body*]
     (else (if ,cond ,body*)))
 
 (if F (my-else-if T 42))

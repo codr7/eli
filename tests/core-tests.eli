@@ -52,34 +52,34 @@
   '[foo bar baz])
 
 (check 42
-  (^foo [] Int 42)
+  (^foo [] 42)
   (foo))
 
 (check 42
-  (^foo [a] Int a)
+  (^foo [a] a)
   (foo 42))
 
 (check 42
-  (^foo [n] Int
+  (^foo [n]
     (dec n) (dec n))
 
   (foo 44))
 
 (check 3
-  (^foo [] Int
+  (^foo []
     1 (return 2 3) 4)
 
   (foo))
 
 (check 3628800
-  (^fact [acc n] Int
+  (^fact [acc n]
     (if (= n 1) acc
       (else (recall (* n acc) (- n 1)))))
 
   (fact 1 10))
 
 (check 55
-  (^fib [n a b] Int
+  (^fib [n a b]
     (if (> n 1) (recall (- n 1) b (+ a b))
       (else (if (= n 0) a (else b)))))
 
@@ -107,7 +107,7 @@
 (do
   (var foo 'foo)
 
-  (^baz [] _
+  (^baz []
     foo)
 
   (check 'foo (baz))
@@ -164,19 +164,19 @@
   (let [foo '[1 2 (+ 1 2)]] ,foo))
 
 (check 3
-  (^my-else-if ['cond 'body*] Any
+  (^my-else-if ['cond 'body*]
     (else (if ,cond ,body*)))
 
   (if F (my-else-if T 1 2 3)))
 
 (check 42
-  (^foo [x*] Int
+  (^foo [x*]
     (+ x*))
 
   (foo 35 7))
 
 (check 3
-  (^foo [x y] Int
+  (^foo [x y]
     (if (= x 1)
       (recall [2 3]*))
     y)
