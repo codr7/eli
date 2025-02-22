@@ -224,7 +224,7 @@ Methods returning pairs support call site destructuring.
 Method definitions always return the method as a value, leaving out the name avoids binding.
 
 ```
-(^_ [] 42)
+'(^_ [] 42)
 ```
 `(Method _)`
 
