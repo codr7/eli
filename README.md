@@ -213,7 +213,7 @@ Method definitions return the defined method, leaving out the name avoids bindin
 `(Method _)`
 
 ### Macros
-There is no special support for macros, [quoted arguments](https://github.com/codr7/jx#arguments) + inlined direct calls = macros.
+There is no special support for macros, instead [quoted arguments](https://github.com/codr7/eli#arguments) in combination with the fact that all calls are inlined may be used to get the same effect.
 
 The following example implements [`else-if`](https://github.com/codr7/jx#branches) in user code.
 
