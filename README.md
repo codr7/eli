@@ -73,7 +73,7 @@ The `Bit` type has two values.
 `Lib` is the type of all libraries.
 
 #### List (Any Call Seq)
-A `List´ is a sequence of values.
+`List´ represents a sequence of values.
 
 `[1 2 3`
 
@@ -84,7 +84,7 @@ A `List´ is a sequence of values.
 `Maybe` represents optional values.
 
 #### Meta (Any)
-`Meta` is the root type of all types.
+`Meta` is the type of all types.
 
 #### Method (Any Call)
 `Method` is the type of all methods.
@@ -100,18 +100,18 @@ The `Nil` type represents missing values.
 `1:'foo`
 
 #### Seq (Any)
-`Seq` is the root type of all iterable types.
+`Seq` is the root type of all iterable values.
 
 #### String (Any Call Seq)
-A `String` is a sequence of `Char`s.
+A `String` is a sequence of characters.
 
 `"abc"`
 
 #### Time (Any)
-A `Time` represents a duration of time.
+`Time` represents a time duration.
 
 #### Timestamp (Any)
-A `Timestamp` represents a point in time.
+`Timestamp` represents a point in time.
 
 `(now)`
 
