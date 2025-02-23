@@ -44,7 +44,7 @@ The `Bit` type has two values.
 `T` `F`
 
 #### Call (Any)
-`Call` is the root of all callable types.
+`Call` is the root of callable types.
 
 #### Char (Any)
 `Char` values are characters.
