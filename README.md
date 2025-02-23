@@ -210,6 +210,7 @@ Both `let` and `var` support pair destructuring.
 (let [i:j 1:2]
   i:j)
 ```
+`1:2`
 
 ### Loops
 `for` may be used to repeat a block of code for each item in a sequence.
