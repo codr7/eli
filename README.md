@@ -36,7 +36,7 @@ fib 0.634149815
 ### Types
 
 #### Any
-`Any` is the root type.
+`Any` is the root of all types.
 
 #### Bit (Any)
 The `Bit` type has two values.
@@ -44,7 +44,7 @@ The `Bit` type has two values.
 `T` `F`
 
 #### Call (Any)
-`Call` is the root type of all callable values.
+`Call` is the root of all callable types.
 
 #### Char (Any)
 `Char` represents characters.
@@ -93,6 +93,9 @@ The `Bit` type has two values.
 The `Nil` type represents missing values.
 
 `_`
+
+#### Num (Any)
+`Num` is the root type of all numeric values.
 
 #### Pair (Any Call Seq)
 `Pair` represents pairs of values.
