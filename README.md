@@ -20,7 +20,7 @@ The following projects implement `eli` in different languges, some are more comp
 - [Swift](https://github.com/codr7/sweet)
 
 ## Benchmarks
-I decided early on that Python would make a reasonable performance target to aim for. While it has a definite advantage by virtue of being implemented in a lower level language, it has a comparable level of dynamism and is very popular.
+I decided early on that Python would make a reasonable performance target to aim for since it has a comparable level of dynamism and is very popular.
 
 ### Python
 ```
