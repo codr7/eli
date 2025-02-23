@@ -204,6 +204,13 @@ foo
 ```
 `'foo`
 
+Both `let` and `var` support pair destructuring.
+
+```
+(let [i:j 1:2]
+  i:j)
+```
+
 ### Loops
 `for` may be used to repeat a block of code for each item in a sequence.
 
@@ -367,9 +374,4 @@ since `else` is only defined inside `if`'s body.
 ```
 ```
 Error in REPL@1:1: Check failed; expected 1, actual: 2
-```
-
-When called with one argument, the expected value is assumed to be `T`.
-```
-(check (= 42 42))
 ```
