@@ -90,15 +90,15 @@ The `Bit` type has two values.
 `Method` is the type of all methods.
 
 #### Nil ()
-The `Nil` type represents missing values.
+A `Nil` is a missing value.
 
 `_`
 
 #### Num (Any)
-`Num` is the root type of all numeric values.
+`Num` is the root of all numeric types.
 
 #### Pair (Any Call Seq)
-`Pair` represents pairs of values.
+A `Pair` is a pair of values.
 
 `1:'foo`
 
@@ -116,10 +116,10 @@ A `Sym` is a quoted identifier.
 `'foo`
 
 #### Time (Any)
-`Time` represents a time duration.
+A `Time` is a time duration.
 
 #### Timestamp (Any)
-`Timestamp` represents a point in time.
+A `Timestamp` is a point in time.
 
 `(now)`
 
