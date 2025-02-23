@@ -167,6 +167,13 @@ A quoted list becomes a list of quoted items.
 ```
 `3`
 
+### Pairs
+Pairs of values may be created using `:`.
+
+```
+1:'foo
+```
+
 ### Bindings
 Values may be bound to identifiers at compile time using `var`.
 
@@ -235,13 +242,6 @@ Multiple sequences may be processed in parallel.
   (say "foo: " foo ", bar: " bar))
 
 foo: 6, bar: 15
-```
-
-### Pairs
-Pairs of values may be created using `:`.
-
-```
-1:'foo
 ```
 
 ### Methods
