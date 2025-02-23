@@ -47,17 +47,17 @@ The `Bit` type has two values.
 `Call` is the root of all callable types.
 
 #### Char (Any)
-`Char` represents characters.
+`Char` values are characters.
 
 `\a`
 
 #### Expr (Any)
-`Expr` represents quoted expressions.
+`Expr` values are quoted expressions.
 
 `'(+ 1 2)`
 
 #### Float (Any Num)
-`Float` represents floating point values with absolute precision.
+`Float` values are floating point values with absolute precision.
 
 `1.23`
 
@@ -73,7 +73,7 @@ The `Bit` type has two values.
 `Lib` is the type of all libraries.
 
 #### List (Any Call Seq)
-`List´ represents a sequence of values.
+`List´ values are mutable sequences of values.
 
 `[1 2 3`
 
@@ -81,16 +81,16 @@ The `Bit` type has two values.
 `Macro` is the type of all macros.
 
 #### Maybe (Any Nil)
-`Maybe` represents optional values.
+`Maybe` is the type of optional values.
 
 #### Meta (Any)
 `Meta` is the type of all types.
 
 #### Method (Any Call)
-`Method` is the type of all methods.
+`Method` is the type of methods.
 
 #### Nil ()
-A `Nil` is a missing value.
+`Nil` is the type of missing values.
 
 `_`
 
@@ -98,28 +98,28 @@ A `Nil` is a missing value.
 `Num` is the root of all numeric types.
 
 #### Pair (Any Seq)
-A `Pair` is a pair of values.
+`Pair` is the type of pairs of values.
 
 `1:'foo`
 
 #### Seq (Any)
-`Seq` is the root type of all iterable values.
+`Seq` is the root of all iterable types.
 
 #### String (Any Call Seq)
-A `String` is a sequence of characters.
+`String` values are sequences of characters.
 
 `"abc"`
 
 #### Sym (Any)
-A `Sym` is a quoted identifier.
+`Sym` values are quoted identifiers.
 
 `'foo`
 
 #### Time (Any)
-A `Time` is a time duration.
+`Time` values are durations of time.
 
 #### Timestamp (Any)
-A `Timestamp` is a point in time.
+`Timestamp` values are points in time.
 
 `(now)`
 
