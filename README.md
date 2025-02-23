@@ -248,7 +248,7 @@ Methods may be defined using `^`.
 `42`
 
 #### Arguments
-Methods may be made to accept a variable number of arguments by suffixing the final argument with `*`.
+Suffixing the final argument with `*` makes the method accept varargs.
 ```
 (^foo [x*] 
   (+ x*))
@@ -286,7 +286,6 @@ By default, the value of the last evaluated form is returned.
 `42`
 
 `return` evaluates its arguments and jumps to the end of the current method.
-
 ```
 (^foo [] 1 (return 2 3) 4)
 
@@ -295,7 +294,6 @@ By default, the value of the last evaluated form is returned.
 `3`
 
 Methods returning pairs support call site destructuring.
-
 ```
 (^foo []
   1:2:3)
