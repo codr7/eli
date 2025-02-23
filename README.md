@@ -97,7 +97,7 @@ A `Nil` is a missing value.
 #### Num (Any)
 `Num` is the root of all numeric types.
 
-#### Pair (Any Call Seq)
+#### Pair (Any Seq)
 A `Pair` is a pair of values.
 
 `1:'foo`
