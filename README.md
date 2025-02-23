@@ -70,21 +70,21 @@ The `Bit` type has two values.
 `Iter` is the root type of all iterators.
 
 #### Lib (Any)
-`Lib` is the type of all libraries.
+`Lib` is the type of libraries.
 
 #### List (Any Call Seq)
-`List´ values are mutable sequences of values.
+`List` values are mutable sequences of values.
 
 `[1 2 3`
 
 #### Macro (Any Call)
-`Macro` is the type of all macros.
+`Macro` is the type of macros.
 
 #### Maybe (Any Nil)
 `Maybe` is the type of optional values.
 
 #### Meta (Any)
-`Meta` is the type of all types.
+`Meta` is the type of types.
 
 #### Method (Any Call)
 `Method` is the type of methods.
@@ -95,7 +95,7 @@ The `Bit` type has two values.
 `_`
 
 #### Num (Any)
-`Num` is the root of all numeric types.
+`Num` is the root of numeric types.
 
 #### Pair (Any Seq)
 `Pair` is the type of pairs of values.
@@ -103,7 +103,7 @@ The `Bit` type has two values.
 `1:'foo`
 
 #### Seq (Any)
-`Seq` is the root of all iterable types.
+`Seq` is the root of iterable types.
 
 #### String (Any Call Seq)
 `String` values are sequences of characters.
