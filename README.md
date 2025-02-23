@@ -5,7 +5,7 @@
 
 It all began with a craving for an embedded scripting language that didn't drive me mad, but quickly turned into one of the deepest rabbit holes I've had the pleasure of falling into.
 
-I've written a ton of implementations in different languages over the years, each verifying and further refining the design.
+I've written a ton of implementations in different languages over the years, each verifying and further refining and simplifying the design.
 
 ## Implementations
 
