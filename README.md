@@ -110,6 +110,11 @@ A `String` is a sequence of characters.
 
 `"abc"`
 
+#### Sym (Any)
+A `Sym` is a quoted identifier.
+
+`'foo`
+
 #### Time (Any)
 `Time` represents a time duration.
 
