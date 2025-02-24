@@ -219,6 +219,15 @@ Both `let` and `var` support pair destructuring.
 ```
 `1:2`
 
+`set` may be used to replace the value of existing bindings.
+
+```
+(let [foo 1 bar 2]
+  (set foo 2 bar 3)
+  foo:bar)
+```
+`3:4`
+
 ### Loops
 `for` may be used to repeat a block of code for each item in a sequence.
 
