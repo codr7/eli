@@ -125,6 +125,7 @@ The `Bit` type has two values.
 
 ### Branches
 `if` may be used to conditionally evaluate a block of code.
+
 ```
 (if T 1)
 ```
@@ -149,12 +150,14 @@ The `Bit` type has two values.
 
 ### Quoting
 Any expression may be quoted by prefixing with `'`.
+
 ```
 '(+ 1 2)
 ```
 `'(+ 1 2)`
 
 A quoted list becomes a list of quoted items.
+
 ```
 '[foo bar baz]
 ```
@@ -266,6 +269,7 @@ Methods may be defined using `^`.
 
 #### Arguments
 Suffixing the final argument with `*` makes the method accept varargs.
+
 ```
 (^foo [x*] 
   (+ x*))
@@ -274,6 +278,7 @@ Suffixing the final argument with `*` makes the method accept varargs.
 ```
 
 Prefixing arguments with `'` automatically quotes and passes the expression without evaluating at compile time.
+
 ```
 (^foo ['x] 
   x)
@@ -284,6 +289,7 @@ Prefixing arguments with `'` automatically quotes and passes the expression with
 
 `,` may be used to unquote,
 note that this results in `(+ 35 7)` being spliced into `foo`'s body at compile time.
+
 ```
 (^foo ['x] ,x)
 
@@ -292,7 +298,7 @@ note that this results in `(+ 35 7)` being spliced into `foo`'s body at compile 
 `42`
 
 #### Result
-By default, the value of the last evaluated form is returned.
+By default, the value of the last form is returned.
 
 ```
 (^foo [x] 
@@ -303,6 +309,7 @@ By default, the value of the last evaluated form is returned.
 `42`
 
 `return` evaluates its arguments and jumps to the end of the current method.
+
 ```
 (^foo [] 1 (return 2 3) 4)
 
@@ -311,6 +318,7 @@ By default, the value of the last evaluated form is returned.
 `3`
 
 Methods returning pairs support call site destructuring.
+
 ```
 (^foo []
   1:2:3)
@@ -345,12 +353,12 @@ Methods returning pairs support call site destructuring.
 `55`
 
 #### Lambdas
-Method definitions always return the method as a value, leaving out the name avoids binding.
+Lambdas may be created by not specifying a name.
 
 ```
-'(^_ [] 42)
+(^[] 42)
 ```
-`(Method _)`
+`(Method REPL@1:1)`
 
 ### Macros
 Macros are simply methods using [quoted arguments](https://github.com/codr7/eli#arguments). The following example implements [`else-if`](https://github.com/codr7/jx#branches).
@@ -365,6 +373,7 @@ Macros are simply methods using [quoted arguments](https://github.com/codr7/eli#
 
 ### IO
 `say` prints its arguments followed by newline to standard output.
+
 ```
 (say "35+7=" (+ 35 7))
 ```
@@ -374,6 +383,7 @@ Macros are simply methods using [quoted arguments](https://github.com/codr7/eli#
 
 ### Tests
 `check` may be used to validate that a block of code produces the expected value.
+
 ```
 (check 1 2)
 ```
