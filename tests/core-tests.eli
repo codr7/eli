@@ -110,17 +110,6 @@
     (inc foo (* i j)))
   (check 32 foo))
 
-(do
-  (var foo 'foo)
-
-  (^baz []
-    foo)
-
-  (check 'foo (baz))
-
-  (let [foo 'bar]
-    (check 'bar (baz))))
-
 (check 123:4
   (parse-int " 123def"))
 

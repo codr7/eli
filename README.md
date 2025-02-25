@@ -353,7 +353,7 @@ Method definitions always return the method as a value, leaving out the name avo
 `(Method _)`
 
 ### Macros
-There is no special support for macros, [quoted arguments](https://github.com/codr7/eli#arguments) in combination with the fact that direct calls are always inlined may be used to get the same effect.
+There is no special support for macros, [quoted arguments](https://github.com/codr7/eli#arguments) in combination with the fact that all method calls are inlined may be used to get the same effect.
 
 The following example implements [`else-if`](https://github.com/codr7/jx#branches) in user code.
 
