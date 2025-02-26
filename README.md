@@ -34,7 +34,7 @@ fib 0.634149815
 ## [eli-java](https://github.com/codr7/eli-java)
 
 ```
-$ java -jar eli.jar eli/benchmarks/run.eli
+$ java -jar eli.jar benchmarks/run.eli
 ```
 ```
 fact PT0.853468321S
