@@ -22,7 +22,6 @@ The following projects implement `eli` in different languges, some are more comp
 ## Performance
 I decided early on that Python would make a reasonable performance target to aim for since it has a comparable level of dynamism and is very popular.
 
-### Python
 ```
 $ python3 benchmarks/run.py
 ```
@@ -31,7 +30,7 @@ fact 1.689405483
 fib 0.634149815
 ```
 
-## [eli-java](https://github.com/codr7/eli-java)
+## [Java](https://github.com/codr7/eli-java)
 
 ```
 $ java -jar eli.jar benchmarks/run.eli
