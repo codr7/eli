@@ -254,13 +254,13 @@ Multiple sequences may be processed in parallel.
 ```
 (let [foo 0 bar 0]
   (for [i [1 2 3]
-        j [4 5 6]]
+        j [4 5]]
     (inc foo i)
     (inc bar j))
 
-  (say "foo: " foo ", bar: " bar))
+  (say "foo: " foo " bar: " bar))
 
-foo: 6, bar: 15
+foo: 6 bar: 9
 ```
 
 ### Methods
