@@ -20,7 +20,7 @@ The following projects implement `eli` in different languges, some are more comp
 - [Swift](https://github.com/codr7/sweet)
 
 ## Performance
-I decided early on that Python would make a reasonable performance target to aim for since it has a comparable level of dynamism and is very popular.
+I decided early on that Python would make a reasonable performance target to aim for since it's mostly interpreted and very well known.
 
 ```
 $ python3 benchmarks/run.py
