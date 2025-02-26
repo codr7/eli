@@ -1,11 +1,9 @@
 ## Embedded Lisp Interpreter
 
 ## Introduction
-`eli` represents the culmination of more than 15 years of research into designing and implementing embedded Lisp interpreters.
+`eli` represents the culmination of more than 15 years of research into designing and implementing embedded Lisp interpreters in various languages.
 
-It all began with a craving for an embedded scripting language that didn't drive me mad, but quickly turned into one of the deepest rabbit holes I've had the pleasure of falling into.
-
-I've written a ton of implementations in different languages over the years, each verifying and further refining and simplifying the design.
+It all began with a craving an embedded Lisp for personal projects, but evolved into one of the deepest rabbit holes I've had the pleasure of falling into.
 
 ## Implementations
 
@@ -172,7 +170,7 @@ A quoted list becomes a list of quoted items.
 ```
 `['foo 'bar 'baz]`
 
-`,` may be used to unquote.
+`,` unquotes the succeding form.
 ```
 (let [foo '(+ 1 2)]
   ,foo)
@@ -180,7 +178,7 @@ A quoted list becomes a list of quoted items.
 `3`
 
 ### Pairs
-Pairs of values may be created using `:`.
+Pairs may be created using `:`.
 
 ```
 1:'foo
@@ -203,7 +201,7 @@ foo
 ```
 `'bar`
 
-and locally override existing bindings.
+or override existing bindings.
 
 ```
 (var foo 'foo)
@@ -241,7 +239,7 @@ Both `let` and `var` support pair destructuring.
 `3:4`
 
 ### Loops
-`for` may be used to repeat a block of code for each item in a sequence.
+`for` repeats its body with variables bound to successive items.
 
 ```
 (let [foo 0]
@@ -277,7 +275,7 @@ Methods may be defined using `^`.
 `42`
 
 #### Arguments
-Suffixing the final argument with `*` makes the method accept varargs.
+Suffixing the final argument with `*` makes the method accept a variable number of arguments.
 
 ```
 (^foo [x*] 
@@ -286,7 +284,7 @@ Suffixing the final argument with `*` makes the method accept varargs.
 (foo 35 7)
 ```
 
-Prefixing arguments with `'` automatically quotes and passes the expression without evaluating at compile time.
+Prefixing arguments with `'` automatically quotes and passes the expression at compile time.
 
 ```
 (^foo ['x] 
@@ -362,7 +360,7 @@ Methods returning pairs support call site destructuring.
 `55`
 
 #### Lambdas
-Lambdas may be created by not specifying a name.
+Lambdas may be created by not specifying a method name.
 
 ```
 (^[] 42)
@@ -370,7 +368,7 @@ Lambdas may be created by not specifying a name.
 `(Method REPL@1:1)`
 
 ### Macros
-Macros are simply methods using [quoted arguments](https://github.com/codr7/eli#arguments). The following example implements [`else-if`](https://github.com/codr7/jx#branches).
+Macros are simply methods using [quoted arguments](https://github.com/codr7/eli#arguments). The following example implements [`else-if`](https://github.com/codr7/jx#branches). Note that it would fail to compile unless its arguments were quoted, since `else` is only available within the body of `if`.
 
 ```
 (^my-else-if ['cond 'body*]
@@ -391,7 +389,7 @@ Macros are simply methods using [quoted arguments](https://github.com/codr7/eli#
 ```
 
 ### Tests
-`check` may be used to validate that a block of code produces the expected value.
+`check` may be used to validate that a block of code produces the expected result.
 
 ```
 (check 1 2)
