@@ -239,6 +239,7 @@ Both `let` and `var` support pair destructuring.
 `3:4`
 
 ### Loops
+#### for
 `for` repeats its body with variables bound to successive items.
 
 ```
@@ -262,6 +263,32 @@ Multiple sequences may be processed in parallel.
 
 foo: 6 bar: 9
 ```
+
+#### while
+`while` repeats its body as long as the specified condition is truthy.
+
+```
+(let [foo 0]
+  (while (< foo 10)
+    (inc foo))
+  foo)
+```
+
+#### break
+`break` evaluates its arguments and jumps to the end of the loop.
+
+```
+(let [foo 0]
+  (while T
+    (if (= (inc foo) 10)
+      (break
+	(say 'break)
+	(* foo 2)))))
+
+break
+```
+`20`
+
 
 ### Methods
 Methods may be defined using `^`.
