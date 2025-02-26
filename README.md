@@ -130,8 +130,13 @@ The `Bit` type has two values.
 
 `(now)`
 
+### Truth
+All values have `Bit` representations; most evaluate to `T`.
+Such values are referred to as truthy.
+Notable exceptions are `0`, empty sequences and `_`.
+
 ### Branches
-`if` may be used to conditionally evaluate a block of code.
+`if` evaluates its body if the specified condition is truthy.
 
 ```
 (if T 1)
@@ -250,7 +255,7 @@ Both `let` and `var` support pair destructuring.
 ```
 `6`
 
-Multiple sequences may be processed in parallel.
+Multiple sequences may be iterated in parallel.
 
 ```
 (let [foo 0 bar 0]
