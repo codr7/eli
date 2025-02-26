@@ -130,7 +130,7 @@ The `Bit` type has two values.
 
 `(now)`
 
-### Truth
+### Truthiness
 All values have `Bit` representations; most evaluate to `T`.
 Such values are referred to as truthy.
 Notable exceptions are `0`, empty sequences and `_`.
