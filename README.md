@@ -131,9 +131,7 @@ The `Bit` type has two values.
 `(now)`
 
 ### Truthiness
-All values have `Bit` representations; most evaluate to `T`.
-Such values are referred to as truthy.
-Notable exceptions are `0`, empty sequences and `_`.
+All values have `Bit` representations, most evaluate to `T`; Such values are referred to as truthy. Notable exceptions are empty sequences, `0` and `_`.
 
 ### Branches
 `if` evaluates its body if the specified condition is truthy.
@@ -429,3 +427,6 @@ Macros are simply methods using [quoted arguments](https://github.com/codr7/eli#
 ```
 Error in REPL@1:1: Check failed; expected 1, actual: 2
 ```
+
+### Work
+Should you find yourself involved in a software project with interesting non-GenAI challenges and need a dedicated developer/tech/team lead with 40 years of solid experience from different technologies/roles/companies/countries, don't hesitate to get in [touch](mailto:codr7@protonmail.com).
