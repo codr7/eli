@@ -43,90 +43,93 @@ fib PT0.68878869S
 ### Types
 
 #### Any
-`Any` is the root of all types.
+The root of all types.
 
 #### Bit (Any)
-The `Bit` type has two values.
+Bits are either true or false.
 
 `T` `F`
 
-#### Call (Any)
-`Call` is the root of callable types.
+#### Callable (Any)
+The root of callable types.
 
 #### Char (Any)
-`Char` values are characters.
+Characters.
 
 `\a`
 
 #### Expr (Any)
-`Expr` values are quoted expressions.
+Quoted expressions.
 
 `'(+ 1 2)`
 
 #### Float (Any Num)
-`Float` values are floating point values with absolute precision.
+Floating point values with absolute precision.
 
 `1.23`
 
 #### Int (Any Num)
-`Int` values are 64 bit integers.
+64 bit integers.
 
 `42`
 
-#### Iter (Any)
-`Iter` is the root type of all iterators.
+#### Iter (Any Iterable)
+Root of iterator types.
+
+#### Iterable (Any)
+Root of iterable types.
 
 #### Lib (Any)
-`Lib` is the type of libraries.
+Type of libraries.
 
-#### List (Any Call Seq)
-`List` values are mutable sequences of values.
+#### List (Any Callable Seq)
+Mutable, random access sequences of values.
 
 `[1 2 3`
 
-#### Macro (Any Call)
-`Macro` is the type of macros.
+#### Macro (Any Callable)
+Type of macros.
 
 #### Maybe (Any Nil)
-`Maybe` is the type of optional values.
+Optional values.
 
 #### Meta (Any)
-`Meta` is the type of types.
+Type of types.
 
-#### Method (Any Call)
-`Method` is the type of methods.
+#### Method (Any Callable)
+Type of methods.
 
 #### Nil ()
-`Nil` is the type of missing values.
+Missing values.
 
 `_`
 
 #### Num (Any)
-`Num` is the root of numeric types.
+Root of numeric types.
 
 #### Pair (Any Seq)
-`Pair` is the type of pairs of values.
+Pairs of values.
 
 `1:'foo`
 
-#### Seq (Any)
-`Seq` is the root of iterable types.
+#### Seq (Any Iterable)
+Root of sequence types.
 
-#### String (Any Call Seq)
-`String` values are sequences of characters.
+#### String (Any Callable Seq)
+Sequences of characters.
 
 `"abc"`
 
 #### Sym (Any)
-`Sym` values are quoted identifiers.
+Quoted identifiers.
 
 `'foo`
 
 #### Time (Any)
-`Time` values are durations of time.
+Durations of time.
 
 #### Timestamp (Any)
-`Timestamp` values are points in time.
+Points in time.
 
 `(now)`
 

@@ -225,3 +225,6 @@
     (for [i [1 2]]
       (for [j [3 4]]
         (inc v (* i j))))))
+
+(check 441
+  (int/rebase 100 8))
