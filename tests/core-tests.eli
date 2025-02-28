@@ -228,3 +228,9 @@
 
 (check 441
   (int/rebase 100 8))
+
+(check 6
+  (bit/len 63))
+
+(check 7
+  (bit/len 64))
