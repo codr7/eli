@@ -191,7 +191,7 @@ Pairs may be created using `:`.
 ```
 
 ### Bindings
-Values may be bound to identifiers at compile time using `var`.
+Values may be bound to identifiers indefinitely using `var`.
 
 ```
 (var foo 42)
@@ -199,7 +199,7 @@ foo
 ```
 `42`
 
-`let` may be used to create runtime bindings,
+`let` may be used to create scoped bindings,
 
 ```
 (let [foo 'bar]
@@ -207,7 +207,7 @@ foo
 ```
 `'bar`
 
-or override existing bindings.
+or override existing bindings inside its body.
 
 ```
 (var foo 'foo)

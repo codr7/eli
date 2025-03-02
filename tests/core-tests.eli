@@ -204,6 +204,15 @@
   (^foo [n 'f]
     (,f n))
 
+  (let [bar 1
+        baz (^[n] (inc bar n))]
+    (foo 2 baz)
+    bar))
+
+(check 3
+  (^foo [n 'f]
+    (,f n))
+
   (let [bar 1]
     (foo 2 (^[n] (inc bar n)))
     bar))
