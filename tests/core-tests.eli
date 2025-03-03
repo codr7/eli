@@ -161,12 +161,6 @@
 (check [1 2 '(+ 1 2)]
   (let [foo '[1 2 (+ 1 2)]] ,foo))
 
-(check 3
-  (^my-else-if ['cond 'body*]
-    (else (if ,cond ,body*)))
-
-  (if F (my-else-if T 1 2 3)))
-
 (check 42
   (^foo [x*]
     (+ x*))
@@ -190,32 +184,6 @@
   (let [foo 1 bar 2]
     (set foo 3 bar 4)
     foo:bar))
-
-(check 3
-  (^foo [n 'f]
-    (,f n))
-
-  (let [bar 1]
-    (^baz [n] (inc bar n))
-    (foo 2 baz)
-    bar))
-
-(check 3
-  (^foo [n 'f]
-    (,f n))
-
-  (let [bar 1
-        baz (^[n] (inc bar n))]
-    (foo 2 baz)
-    bar))
-
-(check 3
-  (^foo [n 'f]
-    (,f n))
-
-  (let [bar 1]
-    (foo 2 (^[n] (inc bar n)))
-    bar))
 
 (check 10
   (let [foo 0]

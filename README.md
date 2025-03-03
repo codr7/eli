@@ -317,26 +317,6 @@ Suffixing the final argument with `*` makes the method accept a variable number 
 (foo 35 7)
 ```
 
-Prefixing arguments with `'` automatically quotes and passes the expression at compile time.
-
-```
-(^foo ['x] 
-  x)
-  
-(foo (+ 35 7))
-```
-`(+ 35 7)`
-
-`,` may be used to unquote,
-note that this results in `(+ 35 7)` being spliced into `foo`'s body at compile time.
-
-```
-(^foo ['x] ,x)
-
-(foo (+ 35 7))
-```
-`42`
-
 #### Result
 By default, the value of the last form is returned.
 
@@ -399,17 +379,6 @@ Lambdas may be created by not specifying a method name.
 (^[] 42)
 ```
 `(Method REPL@1:1)`
-
-### Macros
-Macros are simply methods using [quoted arguments](https://github.com/codr7/eli#arguments). The following example implements [`else-if`](https://github.com/codr7/jx#branches). Note that it would fail to compile unless its arguments were quoted, since `else` is only available within the body of `if`.
-
-```
-(^my-else-if ['cond 'body*]
-  (else (if ,cond ,body*)))
-
-(if F (my-else-if T 42))
-```
-`42`
 
 ### IO
 `say` prints its arguments followed by newline to standard output.
