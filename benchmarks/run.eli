@@ -1,9 +1,9 @@
 (^fact [acc n]
-  (if (= n 1) acc (else (recall (* n acc) (- n 1)))))
+  (if (= n 1) acc (else (fact (* n acc) (- n 1)))))
 
 (say "fact " (bench 10000 (fact 1 900)))
 
 (^fib [n a b]
-  (if (> n 1) (recall (- n 1) b (+ a b)) (else-if (= n 0) a (else b))))
+  (if (> n 1) (fib (- n 1) b (+ a b)) (else-if (= n 0) a (else b))))
 
 (say "fib " (bench 100000 (fib 80 0 1)))

@@ -76,13 +76,13 @@
 (check 3628800
   (^fact [acc n]
     (if (= n 1) acc
-      (else (recall (* n acc) (- n 1)))))
+      (else (fact (* n acc) (- n 1)))))
 
   (fact 1 10))
 
 (check 55
   (^fib [n a b]
-    (if (> n 1) (recall (- n 1) b (+ a b))
+    (if (> n 1) (fib (- n 1) b (+ a b))
       (else (if (= n 0) a (else b)))))
 
   (fib 10 0 1))
@@ -166,14 +166,6 @@
     (+ x*))
 
   (foo 35 7))
-
-(check 3
-  (^foo [x y]
-    (if (= x 1)
-      (recall [2 3]*))
-    y)
-
-  (foo 1 2))
 
 (check [1 2 1]
   (let [foo [1 1 1]]

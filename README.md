@@ -359,19 +359,6 @@ Methods returning pairs support call site destructuring.
 ```
 `2:3`
 
-#### Recursion
-`recall` may be used to rebind arguments and jump to the start of the current method.
-
-```
-(^fib [n a b]
-  (if (> n 1) 
-    (recall (- n 1) b (+ a b)) 
-    (if (= n 0) a b)))
-
-(fib 10 0 1)
-```
-`55`
-
 #### Lambdas
 Lambdas may be created by not specifying a method name.
 
