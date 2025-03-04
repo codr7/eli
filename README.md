@@ -296,6 +296,24 @@ break
 `20`
 
 
+### Iterators
+`reduce` may be used to transform any iterable into a single value using the specified binary operation and seed value.
+
+```
+(^my-sum [in*]
+  (iter/reduce + in 0))
+
+(my-sum 1 2 3)
+```
+`6`
+
+`unzip` may be used to split any iterable of pairs into a pair of lists.
+
+```
+(iter/unzip [1:2 3:4])
+```
+`[1 3]:[2 4]`
+
 ### Methods
 Methods may be defined using `^`.
 
