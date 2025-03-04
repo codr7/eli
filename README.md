@@ -377,6 +377,17 @@ Lambdas may be created by not specifying a method name.
 35+7=42
 ```
 
+### Libraries
+`lib` may be used to define/extend libraries.
+
+```
+(lib foo
+  (var bar 42))
+
+foo/bar
+```
+`42`
+
 ### Tests
 `check` may be used to validate that a block of code produces the expected result.
 

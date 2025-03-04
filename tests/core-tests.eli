@@ -212,3 +212,9 @@
 
 (check [[1] [2] [1 2] [3] [1 3] [2 3] [1 2 3]]
   (list/into (iter/combinations [1 2 3])))
+
+(check 42
+  (lib foo
+    (var bar 42))
+
+  foo/bar)
