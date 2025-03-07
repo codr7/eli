@@ -378,7 +378,7 @@ Methods returning pairs support call site destructuring.
 `2:3`
 
 #### Lambdas
-Lambdas may be created by not specifying a method name.
+Lambdas may be created by leaving out the method name.
 
 ```
 (^[] 42)
