@@ -107,7 +107,8 @@
 (let [foo 0]
   (for [i [1 2 3]
         j [4 5]]
-    (inc foo (* i j)))
+    (set foo (+ foo (* i j))))
+    
   (check 14 foo))
 
 (check 123:4
@@ -193,7 +194,8 @@
   (let [v 0]
     (for [i [1 2]]
       (for [j [3 4]]
-        (inc v (* i j))))))
+        (set v (+ v (* i j)))))
+    v))
 
 (check 441
   (int/rebase 100 8))
