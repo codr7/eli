@@ -221,3 +221,13 @@
     (var bar 42))
 
   foo/bar)
+
+(do
+  (^foo []
+    (let [x 0]
+      (^[] (inc x))))
+
+  (check 1:2:3
+    (let [f1 (foo)
+          f2 (foo)]
+      (f1):(f1):(f2))))
