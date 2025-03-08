@@ -295,6 +295,25 @@ break
 ```
 `20`
 
+#### next
+`next` evaluates its arguments and jumps to the start of next iteration.
+
+```
+(let [foo 0]
+  (while T
+    (if (< (inc foo) 3)
+      (next (say 'next)))
+      
+    (break
+      (say 'break)
+      (* foo 2))))
+
+next
+next
+break
+```
+`20`
+
 
 ### Iterators
 `reduce` may be used to transform any iterable into a single value using the specified binary operation and seed value.
