@@ -233,3 +233,9 @@
     (let [f1 (foo)
           f2 (foo)]
       (f1):(f1):(f2))))
+
+(check 1:2:3
+  (^foo [x y z]
+    x:y:z)
+
+  (foo [1 2 3]*))
