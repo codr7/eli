@@ -50,8 +50,14 @@ Bits are either true or false.
 
 `T` `F`
 
-#### Callable (Any)
+#### Callable
 The root of callable types.
+
+#### Comparable
+The root of all comparable types.
+
+#### Countable
+The root of all countable types.
 
 #### Char (Any)
 Characters.
@@ -63,12 +69,12 @@ Quoted expressions.
 
 `'(+ 1 2)`
 
-#### Float (Any Num)
+#### Float (Any Numeric)
 Floating point values with absolute precision.
 
 `1.23`
 
-#### Int (Any Num)
+#### Int (Any Numeric)
 64 bit integers.
 
 `42`
@@ -76,19 +82,24 @@ Floating point values with absolute precision.
 #### Iter (Any Iterable)
 Root of iterator types.
 
-#### Iterable (Any)
+#### Iterable ()
 Root of iterable types.
 
 #### Lib (Any)
 Type of libraries.
 
-#### List (Any Callable Seq)
+#### List (Any Callable Comparable Countable Iterable Sequential)
 Mutable, random access sequences of values.
 
-`[1 2 3`
+`[1 2 3]`
 
 #### Macro (Any Callable)
 Type of macros.
+
+#### Map (Any Callable Comparable Countable Iterable Sequential)
+Mutable, ordered mappings between values.
+
+`{1:2 3:4}`
 
 #### Maybe (Any Nil)
 Optional values.
@@ -104,23 +115,23 @@ Missing values.
 
 `_`
 
-#### Num (Any)
+#### Numeric (Any Comparable)
 Root of numeric types.
 
-#### Pair (Any Seq)
+#### Pair (Any Comparable Countable Iterable Sequential)
 Pairs of values.
 
 `1:'foo`
 
-#### Seq (Any Iterable)
+#### Sequential
 Root of sequence types.
 
-#### String (Any Callable Seq)
+#### String (Any Callable Comparable Countable Iterable Sequential)
 Sequences of characters.
 
 `"abc"`
 
-#### Sym (Any)
+#### Sym (Any Comparable)
 Quoted identifiers.
 
 `'foo`
