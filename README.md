@@ -54,10 +54,10 @@ Bits are either true or false.
 The root of callable types.
 
 #### Comparable
-The root of all comparable types.
+The root of comparable types.
 
 #### Countable
-The root of all countable types.
+The root of countable types.
 
 #### Char (Any)
 Characters.
@@ -124,7 +124,7 @@ Pairs of values.
 `1:'foo`
 
 #### Sequential
-Root of sequence types.
+Root of values with heads and tails.
 
 #### String (Any Callable Comparable Countable Iterable Sequential)
 Sequences of characters.
