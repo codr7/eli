@@ -209,10 +209,10 @@
   (int/rebase 100 8))
 
 (check 6
-  (bit/len 63))
+  (bit/size 63))
 
 (check 7
-  (bit/len 64))
+  (bit/size 64))
 
 (check 6
   (iter/reduce + [2 3] 1))
@@ -254,3 +254,6 @@
 (check 1:[2 3]:[1 2 3]
   (let [foo [1 2 3]]
     (seq/head foo):(seq/tail foo):foo))
+
+(check 3
+  #"abc")
