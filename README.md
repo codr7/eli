@@ -82,7 +82,7 @@ Floating point values with absolute precision.
 #### Iter (Any Iterable)
 Root of iterator types.
 
-#### Iterable ()
+#### Iterable
 Root of iterable types.
 
 #### Lib (Any)
@@ -110,7 +110,7 @@ Type of types.
 #### Method (Any Callable)
 Type of methods.
 
-#### Nil ()
+#### Nil
 Missing values.
 
 `_`
