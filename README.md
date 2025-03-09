@@ -25,7 +25,7 @@ $ python3 benchmarks/run.py
 ```
 ```
 fact 1.689405483
-fib 0.634149815
+fib  0.634149815
 ```
 
 ## [Java](https://github.com/codr7/eli-java)
@@ -34,8 +34,8 @@ fib 0.634149815
 $ java -jar eli.jar benchmarks/run.eli
 ```
 ```
-fact PT0.853468321S
-fib PT0.68878869S
+fact 1.682860949
+fib  1.568288647
 ```
 
 ## Language

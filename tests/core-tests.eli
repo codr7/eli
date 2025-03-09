@@ -257,3 +257,6 @@
 
 (check 3
   #"abc")
+
+(check {'foo:1 'bar:2}
+  '{foo:1 bar:2})
