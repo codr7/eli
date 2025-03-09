@@ -121,7 +121,7 @@ Root of numeric types.
 #### Pair (Any Comparable Countable Iterable Sequential)
 Pairs of values.
 
-`1:'foo`
+`1:2`
 
 #### Sequential
 Root of values with heads and tails.
@@ -194,13 +194,6 @@ A quoted list becomes a list of quoted items.
 ```
 `3`
 
-### Pairs
-Pairs may be created using `:`.
-
-```
-1:'foo
-```
-
 ### Bindings
 Values may be bound to identifiers indefinitely using `var`.
 
@@ -221,22 +214,22 @@ foo
 or override existing bindings inside its body.
 
 ```
-(var foo 'foo)
+(var foo 1)
 foo
 ```
-`'foo`
+`1`
 
 ```
 (^baz [] foo)
   
-(let [foo 'bar] (baz))
+(let [foo 2] (baz))
 ```
-`'bar`
+`2`
 
 ```
 foo
 ```
-`'foo`
+`1`
 
 Both `let` and `var` support pair destructuring.
 
