@@ -413,8 +413,7 @@ Lambdas may be created by leaving out the method name.
 
 ```
 (say "35+7=" (+ 35 7))
-```
-```
+
 35+7=42
 ```
 
