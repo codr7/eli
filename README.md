@@ -418,13 +418,50 @@ Lambdas may be created by leaving out the method name.
 ```
 
 ### Libraries
-`lib` may be used to define/extend libraries.
 
+`lib` may be used to define/extend namespaces.
 ```
 (lib foo
   (var bar 42))
 
 foo/bar
+```
+`42`
+
+`import` may be used to pull external bindings into the current namespace.
+```
+(import f/bar)
+bar
+```
+`42`
+
+The target id may be specified explicitly.
+```
+(import foo:f)
+f/bar
+```
+`42`
+
+### Loading
+`include` may be used to include the content of external files at compile time.
+
+test.eli:
+```
+42
+```
+```
+(include "test.eli")
+```
+`42`
+
+`load` may be used to evaluate the content of external files at run time.
+
+test.eli:
+```
+42
+```
+```
+(load "test.eli")
 ```
 `42`
 

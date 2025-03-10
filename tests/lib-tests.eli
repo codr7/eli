@@ -1,0 +1,16 @@
+(do
+  (lib foo
+    (var bar 42))
+
+  (check 42
+    foo/bar)
+
+  (import foo:f)
+
+  (check 42
+    f/bar)
+
+  (import f/bar)
+
+  (check 42
+    bar))
