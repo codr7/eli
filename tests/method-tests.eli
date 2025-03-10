@@ -18,6 +18,16 @@
 
   (foo))
 
+(do
+  (^foo [x y?]
+    x:y)
+
+  (check 1:2
+    (foo 1 2))
+
+  (check 3:_
+    (foo 3)))
+
 (check 1:2:3
   (^foo [x y z]
     x:y:z)

@@ -349,7 +349,21 @@ Methods may be defined using `^`.
 `42`
 
 #### Arguments
-Suffixing the final argument with `*` makes the method accept a variable number of arguments.
+Final arguments suffixed with `?` are optional.
+
+```
+(^foo [x y?]
+  (say x " " y))
+
+(foo 1 2)
+(foo 3)
+```
+```
+1 2
+3 _
+```
+
+Suffixing the last argument with `*` enables the method to accept a variable number of arguments.
 
 ```
 (^foo [x*] 
