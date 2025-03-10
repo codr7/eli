@@ -1,0 +1,33 @@
+(check 10
+  (let [foo 0]
+    (while (< foo 10)
+      (inc foo))
+    foo))
+
+(check 20
+  (let [foo 0]
+    (while T
+      (if (= (inc foo) 10)
+        (break 1 2 (* foo 2))))))
+
+(check 10
+  (let [foo 0]
+    (while T
+      (if (< (inc foo) 10)
+        (next))
+
+      (break foo))))
+
+(let [foo 0]
+  (for [i [1 2 3]
+        j [4 5]]
+    (set foo (+ foo (* i j))))
+    
+  (check 14 foo))
+
+(check 21
+  (let [v 0]
+    (for [i [1 2]]
+      (for [j [3 4]]
+        (set v (+ v (* i j)))))
+    v))

@@ -145,7 +145,7 @@ Points in time.
 `(now)`
 
 ### Truthiness
-All values have `Bit` representations, most evaluate to `T`; Such values are referred to as truthy. Notable exceptions are empty strings, lists; `0` and `_`.
+All values have `Bit` representations, most evaluate to `T`; Such values are referred to as truthy. Notable exceptions besides `F` are empty strings, lists; `0` and `_`.
 
 ### Branches
 `if` evaluates its body if the specified condition is truthy.

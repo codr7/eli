@@ -1,10 +1,6 @@
 (check 3
   (do 1 2 3))
 
-(check 42
-  (var foo 42)
-  foo)
-
 (check T
   (is 1 1 1))
 
@@ -50,67 +46,6 @@
 (check 4
   (if F 1 2 (else-if T 3 4)))
 
-(check ['foo 'bar 'baz]
-  '[foo bar baz])
-
-(check 42
-  (^foo [] 42)
-  (foo))
-
-(check 42
-  (^foo [a] a)
-  (foo 42))
-
-(check 42
-  (^foo [n]
-    (dec n) (dec n))
-
-  (foo 44))
-
-(check 3
-  (^foo []
-    1 (return 2 3) 4)
-
-  (foo))
-
-(check 3628800
-  (^fact [acc n]
-    (if (= n 1) acc
-      (else (fact (* n acc) (- n 1)))))
-
-  (fact 1 10))
-
-(check 55
-  (^fib [n a b]
-    (if (> n 1) (fib (- n 1) b (+ a b))
-      (else (if (= n 0) a (else b)))))
-
-  (fib 10 0 1))
-
-(check 42
-  (let [foo 42] foo))
-
-(check 1:2
-  (var i:j 1:2)
-  i:j)
-
-(check 1:2
-  (let [i:j 1:2]
-    i:j))
-
-(do
-  (var foo 'foo)
-  (let [foo 'bar]
-    (check 'bar foo))
-  (check 'foo foo))
-
-(let [foo 0]
-  (for [i [1 2 3]
-        j [4 5]]
-    (set foo (+ foo (* i j))))
-    
-  (check 14 foo))
-
 (check 123:4
   (parse-int " 123def"))
 
@@ -118,7 +53,7 @@
   (parse-int "abc123"))
 
 (check 123:6
-    (parse-int "abc123def" 3))
+  (parse-int "abc123def" 3))
 
 (check 1.234:5
   (parse-float "1.234"))
@@ -138,18 +73,6 @@
 (check 2
   ([1 2 3] 1))
 
-(check \b
-  ("abc" 1))
-
-(check 3
-  #[1 2 3])
-
-(check 3
-  #"abc")
-
-(check "ac"
-  (string/strip "abc" \b))
-
 (check T
   (< [1 2 3] [1 3 4]))
 
@@ -162,49 +85,6 @@
 (check [1 2 '(+ 1 2)]
   (let [foo '[1 2 (+ 1 2)]] ,foo))
 
-(check 42
-  (^foo [x*]
-    (+ x*))
-
-  (foo 35 7))
-
-(check [1 2 1]
-  (let [foo [1 1 1]]
-    (foo 1 2)
-    foo))
-
-(check 3:4
-  (let [foo 1 bar 2]
-    (set foo 3 bar 4)
-    foo:bar))
-
-(check 10
-  (let [foo 0]
-    (while (< foo 10)
-      (inc foo))
-    foo))
-
-(check 20
-  (let [foo 0]
-    (while T
-      (if (= (inc foo) 10)
-        (break 1 2 (* foo 2))))))
-
-(check 10
-  (let [foo 0]
-    (while T
-      (if (< (inc foo) 10)
-        (next))
-
-      (break foo))))
-
-(check 21
-  (let [v 0]
-    (for [i [1 2]]
-      (for [j [3 4]]
-        (set v (+ v (* i j)))))
-    v))
-
 (check 441
   (int/rebase 100 8))
 
@@ -214,49 +94,12 @@
 (check 7
   (bit/size 64))
 
-(check 6
-  (iter/reduce + [2 3] 1))
-
-(check 6
-  (iter/sum [1 2 3]))
-
-(check [1 3]:[2 4]
-  (iter/unzip [1:2 3:4]))
-
-(check [[1] [2] [1 2] [3] [1 3] [2 3] [1 2 3]]
-  (list/into (iter/combinations [1 2 3])))
-
 (check 42
   (lib foo
     (var bar 42))
 
   foo/bar)
 
-(do
-  (^foo []
-    (let [x 0]
-      (^[] (inc x))))
-
-  (check 1:2:3
-    (let [f1 (foo)
-          f2 (foo)]
-      (f1):(f1):(f2))))
-
-(check 1:2:3
-  (^foo [x y z]
-    x:y:z)
-
-  (foo [1 2 3]*))
-
-(check [1 2 3]
-  [[1 2]* [3]*])
-
 (check 1:[2 3]:[1 2 3]
   (let [foo [1 2 3]]
     (seq/head foo):(seq/tail foo):foo))
-
-(check 3
-  #"abc")
-
-(check {'foo:1 'bar:2}
-  '{foo:1 bar:2})

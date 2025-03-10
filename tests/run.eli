@@ -1,0 +1,7 @@
+(load "binding-tests.eli")
+(load "core-tests.eli")
+(load "list-tests.eli")
+(load "loop-tests.eli")
+(load "map-tests.eli")
+(load "method-tests.eli")
+(load "string-tests.eli")

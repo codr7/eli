@@ -1,0 +1,8 @@
+(check 3
+  #"abc")
+
+(check \b
+  ("abc" 1))
+
+(check "ac"
+  (string/strip "abc" \b))
