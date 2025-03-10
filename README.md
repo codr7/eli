@@ -418,7 +418,6 @@ Lambdas may be created by leaving out the method name.
 ```
 
 ### Libraries
-
 `lib` may be used to define/extend namespaces.
 ```
 (lib foo
@@ -435,7 +434,7 @@ bar
 ```
 `42`
 
-The target id may be specified explicitly.
+The target id may be specified.
 ```
 (import foo:f)
 f/bar
@@ -443,7 +442,7 @@ f/bar
 `42`
 
 ### Loading
-`include` may be used to include the content of external files at compile time.
+`include` may be used to emit the content of external files at compile time.
 
 test.eli:
 ```
@@ -466,7 +465,7 @@ test.eli:
 `42`
 
 ### Tests
-`check` may be used to validate that a block of code produces the expected result.
+`check` validates that its body produces the specified result.
 
 ```
 (check 1 2)
