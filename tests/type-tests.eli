@@ -1,0 +1,6 @@
+(check 42
+  42@Numeric)
+
+(check 42
+  (let [foo@Numeric 42]
+    foo))

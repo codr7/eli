@@ -6,3 +6,4 @@
 (include "map-tests.eli")
 (include "method-tests.eli")
 (include "string-tests.eli")
+(include "type-tests.eli")
