@@ -11,3 +11,9 @@
 
   (let [bar@Int (foo)]
     bar))
+
+(check 42
+  (^foo [x@Int]
+    x)
+
+  (foo 42))
