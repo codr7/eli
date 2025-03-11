@@ -4,3 +4,10 @@
 (check 42
   (let [foo@Numeric 42]
     foo))
+
+(check 42
+  (^foo []
+    42)
+
+  (let [bar@Int (foo)]
+    bar))
