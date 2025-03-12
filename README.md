@@ -437,7 +437,7 @@ Expressions may be suffixed with `@` to check the result type.
 ```
 (+ 35 7)@Numeric
 ```
-`42´
+`42`
 
 An error is signalled if types aren't compatible.
 
@@ -490,12 +490,13 @@ f/bar
 `42`
 
 ### Loading
-`include` may be used to emit the content of external files at compile time.
-
 test.eli:
 ```
 42
 ```
+
+`include` may be used to emit the content of external files at compile time.
+
 ```
 (include "test.eli")
 ```
@@ -503,10 +504,6 @@ test.eli:
 
 `load` may be used to evaluate the content of external files at run time.
 
-test.eli:
-```
-42
-```
 ```
 (load "test.eli")
 ```
