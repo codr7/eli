@@ -17,3 +17,9 @@
     x)
 
   (foo 42))
+
+(check [1 2 3]
+  (^foo [xs@Int*]
+    xs)
+
+  (foo 1 2 3))

@@ -431,6 +431,40 @@ Lambdas may be created by leaving out the method name.
 35+7=42
 ```
 
+### Type Checking
+Expressions may be suffixed with `@` to check the result type.
+
+```
+(+ 35 7)@Numeric
+```
+`42´
+
+An error is signalled if types aren't compatible.
+
+```
+42@String
+
+Error in REPL@1:3: Type check failed, expected String: 42
+```
+
+Bindings are supported.
+
+```
+(let [foo@Int 42]
+  foo]
+```
+`42`
+
+As well as method arguments.
+
+```
+(^foo [x@Int]
+  x)
+
+(foo 42)
+```
+`42`
+
 ### Libraries
 `lib` may be used to define/extend namespaces.
 ```
@@ -478,7 +512,7 @@ test.eli:
 ```
 `42`
 
-### Tests
+### Testing
 `check` validates that its body produces the specified result.
 
 ```
