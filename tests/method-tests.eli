@@ -66,7 +66,13 @@
   (^foo [x]
     3)
 
+  (^foo [x@Numeric]
+    4)
+
   (check 3
+    (foo 'bar))
+    
+  (check 4
     (foo 42)))
 
 (check 3628800

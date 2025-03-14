@@ -414,6 +414,27 @@ Methods returning pairs support call site destructuring.
 ```
 `2:3`
 
+#### Overloading
+Methods may be overloaded. When called; the most specific, most recent, matching definition is picked.
+
+```
+(^foo [x]
+  (say "x 1"))
+
+(^foo [x y]
+  (say "x y"))
+
+(^foo [x]
+  (say "x 2"))
+
+(foo 1)
+(foo 1 2)
+```
+```
+x 2
+x y
+```
+
 #### Lambdas
 Lambdas may be created by leaving out the method name.
 
