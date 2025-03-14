@@ -415,7 +415,7 @@ Methods returning pairs support call site destructuring.
 `2:3`
 
 #### Overloading
-Methods may be overloaded. When called; the most specific, most recent, matching definition is picked.
+Methods may be overloaded. When called; the most specific, most recent, matching definition is chosen.
 
 ```
 (^foo [x]
@@ -424,6 +424,8 @@ Methods may be overloaded. When called; the most specific, most recent, matching
 (^foo [x y]
   (say "x y"))
 
+(foo 1)
+
 (^foo [x]
   (say "x 2"))
 
@@ -431,6 +433,7 @@ Methods may be overloaded. When called; the most specific, most recent, matching
 (foo 1 2)
 ```
 ```
+x 1
 x 2
 x y
 ```
