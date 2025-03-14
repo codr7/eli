@@ -50,6 +50,25 @@
           f2 (foo)]
       (f1):(f1):(f2))))
 
+(do
+  (^foo [x]
+    1)
+
+  (^foo [x y]
+    2)
+
+  (check 1
+    (foo 42))
+    
+  (check 2
+    (foo 42 42))
+
+  (^foo [x]
+    3)
+
+  (check 3
+    (foo 42)))
+
 (check 3628800
   (^fact [acc n]
     (if (= n 1) acc
