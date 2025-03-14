@@ -101,9 +101,6 @@ Mutable, ordered mappings between values.
 
 `{1:2 3:4}`
 
-#### Maybe (Any Nil)
-Optional values.
-
 #### Meta (Any)
 Type of types.
 
@@ -195,7 +192,7 @@ A quoted list becomes a list of quoted items.
 `3`
 
 ### Bindings
-Values may be bound to identifiers indefinitely using `var`.
+`var` binds values to identifiers.
 
 ```
 (var foo 42)
@@ -211,7 +208,7 @@ foo
 ```
 `'bar`
 
-or override existing bindings inside its body.
+as well as override existing `var` bindings.
 
 ```
 (var foo 1)
@@ -239,7 +236,7 @@ Both `let` and `var` support pair destructuring.
 ```
 `1:2`
 
-`set` may be used to replace the value of existing bindings.
+`set` updates the value of existing bindings.
 
 ```
 (let [foo 1 bar 2]
@@ -320,8 +317,28 @@ break
 
 
 ### Iterators
-`map` may be used to map a method over a set of iterables.
+`comb` returns all combinations of items in an iterable.
+```
+[(iter/comb [1 2 3])*]
+```
+`[[1] [2] [1 2] [3] [1 3] [2 3] [1 2 3]]`
 
+`cross` returns the cross product of two iterables.
+```
+(iter/cross + [1 2] [3 4])
+```
+`[4 5 5 6]`
+
+`fold` folds an iterable into a single value using the specified binary operation and seed value.
+```
+(^my-sum [in*]
+  (iter/reduce + in 0))
+
+(my-sum 1 2 3)
+```
+`6`
+
+`map` maps a method over a set of iterables.
 ```
 (let [it (iter/map + [1 3] [5 7 11])]
   (say it)
@@ -332,18 +349,7 @@ break
 [6 10]
 ```
 
-`reduce` may be used to transform any iterable into a single value using the specified binary operation and seed value.
-
-```
-(^my-sum [in*]
-  (iter/reduce + in 0))
-
-(my-sum 1 2 3)
-```
-`6`
-
-`unzip` may be used to split any iterable of pairs into a pair of lists.
-
+`unzip` splits an iterable of pairs into a pair of lists.
 ```
 (iter/unzip [1:2 3:4])
 ```
@@ -427,7 +433,7 @@ Methods returning pairs support call site destructuring.
 `2:3`
 
 #### Overloading
-Methods may be overloaded. When called; the most specific, most recent, matching definition is chosen.
+Methods support overloading. When called; the most specific, most recent, matching definition is chosen.
 
 ```
 (^foo [x]
@@ -502,7 +508,7 @@ As well as method arguments.
 `42`
 
 ### Libraries
-`lib` may be used to define/extend namespaces.
+`lib` defines/extends namespaces.
 ```
 (lib foo
   (var bar 42))
@@ -511,14 +517,14 @@ foo/bar
 ```
 `42`
 
-`import` may be used to pull external bindings into the current namespace.
+`import` pulls external bindings into the current namespace.
 ```
 (import f/bar)
 bar
 ```
 `42`
 
-The target id may be specified.
+The target id may be overridden.
 ```
 (import foo:f)
 f/bar
@@ -531,14 +537,14 @@ test.eli:
 42
 ```
 
-`include` may be used to emit the content of external files at compile time.
+`include` emits the content of external files at compile time.
 
 ```
 (include "test.eli")
 ```
 `42`
 
-`load` may be used to evaluate the content of external files at run time.
+`load` evaluates the content of external files at run time.
 
 ```
 (load "test.eli")

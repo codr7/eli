@@ -5,7 +5,7 @@
   [(iter/map + [1 3] [5 7 11])*])
 
 (check 6
-  (iter/reduce + [2 3] 1))
+  (iter/fold + [2 3] 1))
 
 (check 6
   (iter/sum [1 2 3]))
@@ -14,4 +14,4 @@
   (iter/unzip [1:2 3:4]))
 
 (check [[1] [2] [1 2] [3] [1 3] [2 3] [1 2 3]]
-  [(iter/combinations [1 2 3])*])
+  [(iter/comb [1 2 3])*])
