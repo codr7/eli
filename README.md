@@ -320,6 +320,18 @@ break
 
 
 ### Iterators
+`map` may be used to map a method over a set of iterables.
+
+```
+(let [it (iter/map + [1 3] [5 7 11])]
+  (say it)
+  (say [it*]))
+```
+```
+(iter/MapResult)
+[6 10]
+```
+
 `reduce` may be used to transform any iterable into a single value using the specified binary operation and seed value.
 
 ```

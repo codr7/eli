@@ -1,5 +1,6 @@
 (include "binding-tests.eli")
 (include "core-tests.eli")
+(include "iter-tests.eli")
 (include "lib-tests.eli")
 (include "list-tests.eli")
 (include "loop-tests.eli")
