@@ -444,7 +444,7 @@ Lambdas may be created by leaving out the method name.
 ```
 (^[] 42)
 ```
-`(Method REPL@1:1)`
+`(^repl@1:1 [])`
 
 ### IO
 `say` prints its arguments followed by newline to standard output.
