@@ -1,0 +1,2 @@
+(check 'Foo42
+  (sym/make "Foo" 42))
