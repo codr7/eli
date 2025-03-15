@@ -340,14 +340,9 @@ break
 
 `map` returns an iterator to a method mapped over a set of iterables.
 ```
-(let [it (iter/map + [1 3] [5 7 11])]
-  (say it)
-  (say [it*]))
+[(iter/map + [1 3] [5 7 11])*]
 ```
-```
-(iter/MapResult)
-[6 10]
-```
+`[6 10]`
 
 `unzip` splits an iterable of pairs into a pair of lists.
 ```
