@@ -312,7 +312,7 @@ Multiple sequences may be iterated in parallel.
 `fold` folds an iterable into a single value using the specified binary operation and seed value.
 ```
 (^my-sum [in*]
-  (iter/reduce + in 0))
+  (iter/fold + in 0))
 
 (my-sum 1 2 3)
 ```
@@ -324,7 +324,7 @@ Multiple sequences may be iterated in parallel.
 ```
 `[6 10]`
 
-`where` returns an iterator to items from a set of iterables matching a predicate.
+`where` returns an iterator to items matching a predicate from a set of iterables.
 ```
 [(iter/where > [1 5 2 6] [1 2 3 4])*]
 ```
