@@ -1,4 +1,4 @@
-## Embedded Lisp Interpreter
+# Embedded Lisp Interpreter
 
 ## Introduction
 `eli` represents the culmination of more than 15 years of designing and implementing embedded Lisp interpreters in various languages.
