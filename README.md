@@ -15,7 +15,7 @@ The following projects implement `eli` in different languges, some are more comp
 - [Java](https://github.com/codr7/eli-java)
 - [Swift](https://github.com/codr7/sweet)
 
-I'm also working on bringing some of the `eli` magic to [Common Lisp](https://github.com/codr7/cl-eli) in library form.
+I'm also working on adding some `eli` magic to [Common Lisp](https://github.com/codr7/cl-eli) in library form.
 
 ## Performance
 I decided early on that Python would make a reasonable performance target to aim for since it's mostly interpreted and very well known.
