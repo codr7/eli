@@ -245,7 +245,7 @@ Both `let` and `var` support pair destructuring.
 ```
 `3:4`
 
-### Iterators
+### Iteration
 #### Imperative
 `for` repeats its body with variables bound to successive items.
 ```
@@ -478,7 +478,7 @@ Bindings are supported.
 ```
 `42`
 
-As well as method arguments.
+As well as method arguments, where more specifically typed arguments have higher priority in overload resolution.
 
 ```
 (^foo [x@Int]
