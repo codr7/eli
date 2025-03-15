@@ -7,15 +7,15 @@ It all began with a craving an embedded Lisp for personal projects, but evolved 
 
 ## Implementations
 
-The following projects implement `eli` in different languges, some are more complete than others. Most work currently happens in [eli-java](https://github.com/codr7/eli-java). The goal is to gradually consolidate into code compatible production ready implementations.
-
+The following projects implement `eli` in different languges, some are more complete than others. Most work currently happens in [eli-java](https://github.com/codr7/eli-java).
 
 - [C](https://github.com/codr7/alisp)
 - [C#](https://github.com/codr7/sharpl)
-- [Common Lisp](https://github.com/codr7/claesp)
 - [Go](https://github.com/codr7/gfun)
 - [Java](https://github.com/codr7/eli-java)
 - [Swift](https://github.com/codr7/sweet)
+
+I'm also working on bringing some of the `eli` magic to [Common Lisp](https://github.com/codr7/cl-eli) in library form.
 
 ## Performance
 I decided early on that Python would make a reasonable performance target to aim for since it's mostly interpreted and very well known.
