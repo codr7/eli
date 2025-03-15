@@ -3,7 +3,6 @@
 (include "iter-tests.eli")
 (include "lib-tests.eli")
 (include "list-tests.eli")
-(include "loop-tests.eli")
 (include "map-tests.eli")
 (include "method-tests.eli")
 (include "string-tests.eli")

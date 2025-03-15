@@ -1,11 +1,48 @@
+(check 10
+  (let [foo 0]
+    (iter/while (< foo 10)
+      (inc foo))
+    foo))
+
+(check 20
+  (let [foo 0]
+    (iter/while T
+      (if (= (inc foo) 10)
+        (break 1 2 (* foo 2))))))
+
+(check 10
+  (let [foo 0]
+    (iter/while T
+      (if (< (inc foo) 10)
+        (next))
+
+      (break foo))))
+
+(let [foo 0]
+  (iter/for [i [1 2 3]
+        j [4 5]]
+    (set foo (+ foo (* i j))))
+    
+  (check 14 foo))
+
+(check 21
+  (let [v 0]
+    (iter/for [i [1 2]]
+      (iter/for [j [3 4]]
+        (set v (+ v (* i j)))))
+    v))
+
 (check [4 5 5 6]
   [(iter/cross + [1 2] [3 4])*])
-  
-(check [6 10]
-  [(iter/map + [1 3] [5 7 11])*])
+
+(check [[1] [2] [1 2] [3] [1 3] [2 3] [1 2 3]]
+  [(iter/comb [1 2 3])*])
 
 (check 6
   (iter/fold + [2 3] 1))
+
+(check [6 10]
+  [(iter/map + [1 3] [5 7 11])*])
 
 (check 6
   (iter/sum [1 2 3]))
@@ -13,5 +50,5 @@
 (check [1 3]:[2 4]
   (iter/unzip [1:2 3:4]))
 
-(check [[1] [2] [1 2] [3] [1 3] [2 3] [1 2 3]]
-  [(iter/comb [1 2 3])*])
+(check [5:2 6:4]
+  [(iter/where > [1 5 2 6] [1 2 3 4])*])

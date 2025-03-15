@@ -245,78 +245,58 @@ Both `let` and `var` support pair destructuring.
 ```
 `3:4`
 
-### Loops
-#### for
+### Iterators
+#### Imperative
 `for` repeats its body with variables bound to successive items.
-
 ```
 (let [foo 0]
-  (for [i [1 2 3]
+  (iter/for [i [1 2 3]
     (inc foo i))
   foo)
 ```
 `6`
 
 Multiple sequences may be iterated in parallel.
-
 ```
 (let [foo 0 bar 0]
-  (for [i [1 2 3]
+  (iter/for [i [1 2 3]
         j [4 5]]
     (inc foo i)
     (inc bar j))
 
-  (say "foo: " foo " bar: " bar))
-
-foo: 6 bar: 9
+  foo:bar)
 ```
+`6:9`
 
-#### while
 `while` repeats its body as long as the specified condition is truthy.
-
 ```
 (let [foo 0]
-  (while (< foo 10)
+  (iter/while (< foo 10)
     (inc foo))
   foo)
 ```
 
-#### break
 `break` evaluates its arguments and jumps to the end of the loop.
-
 ```
 (let [foo 0]
-  (while T
+  (iter/while T
     (if (= (inc foo) 10)
-      (break
-	(say 'break)
-	(* foo 2)))))
-
-break
+      (break (* foo 2)))))
 ```
 `20`
 
-#### next
 `next` evaluates its arguments and jumps to the start of next iteration.
-
 ```
 (let [foo 0]
-  (while T
-    (if (< (inc foo) 3)
-      (next (say 'next)))
+  (iter/while T
+    (if (< (inc foo) 10)
+      (next))
       
-    (break
-      (say 'break)
-      (* foo 2))))
-
-next
-next
-break
+    (break (* foo 2))))
 ```
 `20`
 
-
-### Iterators
+#### Functional
 `comb` returns an iterator for all combinations of items in an iterable.
 ```
 [(iter/comb [1 2 3])*]
@@ -343,6 +323,12 @@ break
 [(iter/map + [1 3] [5 7 11])*]
 ```
 `[6 10]`
+
+`where` returns an iterator to items from a set of iterables matching a predicate.
+```
+[(iter/where > [1 5 2 6] [1 2 3 4])*]
+```
+`[5:2 6:4]`
 
 `unzip` splits an iterable of pairs into a pair of lists.
 ```
