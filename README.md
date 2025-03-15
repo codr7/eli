@@ -317,15 +317,15 @@ break
 
 
 ### Iterators
-`comb` returns all combinations of items in an iterable.
+`comb` returns an iterator for all combinations of items in an iterable.
 ```
 [(iter/comb [1 2 3])*]
 ```
 `[[1] [2] [1 2] [3] [1 3] [2 3] [1 2 3]]`
 
-`cross` returns the cross product of two iterables.
+`cross` returns an iterator for the cross product of two iterables.
 ```
-(iter/cross + [1 2] [3 4])
+[(iter/cross + [1 2] [3 4])*]
 ```
 `[4 5 5 6]`
 
@@ -338,7 +338,7 @@ break
 ```
 `6`
 
-`map` maps a method over a set of iterables.
+`map` returns an iterator to a method mapped over a set of iterables.
 ```
 (let [it (iter/map + [1 3] [5 7 11])]
   (say it)
