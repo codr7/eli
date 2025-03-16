@@ -277,21 +277,21 @@ While `is` returns `T` only if specified arguments have equal identities.
 `T`
 
 ### Sequences
-`seq/head` returns the first item in a sequence, or `_` if empty.
+`head` returns the first item in a sequence, or `_` if empty.
 
 ```
-(seq/head "foo")
+(head "foo")
 ```
 `\f`
 
-`seq/tail` returns the tail of a sequence, or `_` if empty.
+`tail` returns the tail of a sequence, or `_` if empty.
 
 ```
-(seq/tail '{a:1 b:2 c:3})
+(tail '{a:1 b:2 c:3})
 ```
 `{'b:2 'c:3}`
 
-`seq/count` returns the number of items in a sequence, `#` may be used as shorthand.
+`count` returns the number of items in a sequence, `#` may be used as shorthand.
 
 ```
   #7:35:42

@@ -2,6 +2,6 @@
   (check 3
     #foo)
   (check 7
-    (seq/head foo))
+    (head foo))
   (check 35:42
-    (seq/tail foo)))
+    (tail foo)))
