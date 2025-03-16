@@ -3,7 +3,7 @@
 ## Introduction
 `eli` represents the culmination of more than 15 years of designing and implementing embedded Lisp interpreters in various languages.
 
-It all began with a craving an embedded Lisp for personal projects, but evolved into one of the deepest rabbit holes I've had the pleasure of falling into.
+It all began with wanting a nice language for scripting a personal project, but evolved into one of the deepest rabbit holes I've had the pleasure of falling into.
 
 ## Implementations
 
