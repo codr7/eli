@@ -15,10 +15,10 @@ The following projects implement `eli` in different languges, some are more comp
 - [Java](https://github.com/codr7/eli-java)
 - [Swift](https://github.com/codr7/sweet)
 
-I'm also working on adding some `eli` magic to [Common Lisp](https://github.com/codr7/cl-eli).
+I'm also working on bringing some `eli` magic to [Common Lisp](https://github.com/codr7/cl-eli).
 
 ## Performance
-I decided early on that Python would make a reasonable performance target to aim for since it's mostly interpreted and very well known.
+I decided early on that Python would make a reasonable performance target to aim for, since it's mostly interpreted and well known.
 
 ```
 $ python3 benchmarks/run.py
@@ -245,7 +245,7 @@ foo
 ```
 `T`
 
-While `is` returns `T` if specified arguments have equal identities.
+While `is` returns `T` only if specified arguments have equal identities.
 
 ```
 (say (is [1 2 3:4] [1 2 3:4]))
@@ -375,7 +375,7 @@ Final arguments suffixed with `?` are optional.
 3 _
 ```
 
-Suffixing the last argument with `*` enables the method to accept a variable number of arguments.
+Suffixing the last argument with `*` makes the method to accept a variable number of arguments.
 
 ```
 (^foo [x*] 
@@ -383,9 +383,10 @@ Suffixing the last argument with `*` enables the method to accept a variable num
   
 (foo 35 7)
 ```
+`42`
 
 #### Result
-By default, the value of the last form is returned.
+By default, the last value is returned.
 
 ```
 (^foo [x] 
@@ -395,7 +396,7 @@ By default, the value of the last form is returned.
 ```
 `42`
 
-`return` evaluates its arguments and jumps to the end of the current method.
+`return` evaluates its arguments and jumps to the end of the method.
 
 ```
 (^foo [] 1 (return 2 3) 4)
@@ -458,15 +459,6 @@ Lambdas may be created by leaving out the method name.
 ```
 `(^repl@1:1 [])`
 
-### IO
-`say` prints its arguments followed by newline to standard output.
-
-```
-(say "35+7=" (+ 35 7))
-
-35+7=42
-```
-
 ### Destructuring
 All bindings; `let`, `var` and method arguments; support in place destructuring of pairs and maps.
 
@@ -524,6 +516,15 @@ As well as method arguments, where more specifically typed arguments have higher
 (foo 42)
 ```
 `42`
+
+### IO
+`say` prints its arguments followed by newline to standard output.
+
+```
+(say "35+7=" (+ 35 7))
+
+35+7=42
+```
 
 ### Libraries
 `lib` defines/extends namespaces.
