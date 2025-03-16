@@ -192,7 +192,7 @@ A quoted list becomes a list of quoted items.
 `3`
 
 ### Bindings
-`var` binds values to identifiers.
+`var` binds values to identifiers, the value is evaluated at compile time.
 
 ```
 (var foo 42)
@@ -200,7 +200,7 @@ foo
 ```
 `42`
 
-`let` may be used to create scoped bindings,
+`let` creates scoped runtime bindings,
 
 ```
 (let [foo 'bar]
@@ -208,7 +208,7 @@ foo
 ```
 `'bar`
 
-as well as override existing `var` bindings.
+and may be used to locally override existing `var` bindings.
 
 ```
 (var foo 1)
@@ -227,14 +227,6 @@ foo
 foo
 ```
 `1`
-
-Both `let` and `var` support pair destructuring.
-
-```
-(let [i:j 1:2]
-  i:j)
-```
-`1:2`
 
 `set` updates the value of existing bindings.
 
@@ -452,6 +444,30 @@ Lambdas may be created by leaving out the method name.
 (say "35+7=" (+ 35 7))
 
 35+7=42
+```
+
+### Destructuring
+All bindings; `let`, `var` and method arguments; support in place destructuring of pairs and maps.
+
+```
+(var i:j 1:2)
+i:j
+```
+`1:2`
+
+Maps support two forms; one with implicit keys,
+
+```
+(var {foo baz} '{foo:1 bar:2 baz:3})
+foo:baz
+```
+`1:3`
+
+and the other explicit.
+
+```
+(var {f:foo b:baz} '{foo:1 bar:2 baz:3})
+f:b
 ```
 
 ### Type Checking
