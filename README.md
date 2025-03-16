@@ -299,6 +299,14 @@ While `is` returns `T` only if specified arguments have equal identities.
 `3`
 
 ### Iteration
+`iter/get` may be used to get an iterator; `iter/pop` returns the next item, or `_` if empty.
+
+```
+(let [i (iter/get '[foo bar baz])]
+  (iter/pop i))
+```
+`'foo`
+
 #### Imperative
 `for` repeats its body with variables bound to successive items.
 ```
@@ -388,6 +396,12 @@ Multiple sequences may be iterated in parallel.
 (iter/unzip [1:2 3:4])
 ```
 `[1 3]:[2 4]`
+
+`zip` transforms a set of iterables into a pair iterator.
+```
+[(iter/zip 'foo:'bar:'baz [1 2 3] "abc")*]
+```
+`['foo:1:\a 'bar:2:\b 'baz:3:\c]`
 
 ### Methods
 Methods may be defined using `^`.
