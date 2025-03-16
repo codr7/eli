@@ -128,6 +128,8 @@ Sequences of characters.
 
 `"abc"`
 
+String literals support the following escapes: `\n` for line break, `"` for double quote, and `\\` for backslash.
+
 #### Sym (Any Comparable)
 Quoted identifiers.
 
