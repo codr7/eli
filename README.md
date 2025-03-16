@@ -586,6 +586,14 @@ test.eli:
 ```
 `42`
 
+### Debugging
+`dump` converts its arguments to string.
+
+```
+(dump ['foo "bar" 42])
+```
+`['foo "bar" 42]`
+
 ### Testing
 `check` validates that its body produces the specified result.
 

@@ -1,11 +1,11 @@
 (check 3
   #"abc")
 
+(check 12
+  #"foo\nbar\"baz\\")
+
 (check \b
   ("abc" 1))
-
-(check "['foo]"
-  (string/dump ['foo]))
   
 (check "ac"
   (string/strip "abc" \b))
