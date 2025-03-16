@@ -370,6 +370,13 @@ Multiple sequences may be iterated in parallel.
 ```
 `[4 5 5 6]`
 
+`concat` returns a concatenated iterator for a set of iterables.
+
+```
+[(iter/concat [1 2 3] 4:5)*]
+```
+`[1 2 3 4 5]`
+
 `fold` folds an iterable into a single value using the specified binary operation and seed value.
 ```
 (^my-sum [in*]
