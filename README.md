@@ -237,6 +237,27 @@ foo
 ```
 `3:4`
 
+### Value vs. Identity
+`=` returns `T` if specified arguments have equal values.
+
+```
+(say (= [1 2 3:4] [1 2 3:4]))
+```
+`T`
+
+While `is` returns `T` if specified arguments have equal identities.
+
+```
+(say (is [1 2 3:4] [1 2 3:4]))
+```
+`F`
+
+```
+(var foo [1 2 3:4])
+(say (is foo foo))
+```
+`T`
+
 ### Iteration
 #### Imperative
 `for` repeats its body with variables bound to successive items.

@@ -13,6 +13,14 @@
 (check F
   (= 1 1 2))
 
+(let [foo [1 2 3:4]]
+  (check T
+    (is foo foo))
+  (check F
+    (is foo [1 2 3:4]))
+  (check T
+    (= foo [1 2 3:4])))
+  
 (check 6
   (+ 1 2 3))
 
@@ -76,15 +84,6 @@
 (check T
   (< [1 2 3] [1 3 4]))
 
-(do
-  (var foo '(+ 1 2))
-
-  (check T
-    (= ,foo (unquote foo))))
-
-(check [1 2 '(+ 1 2)]
-  (let [foo '[1 2 (+ 1 2)]] ,foo))
-
 (check 441
   (int/rebase 100 8))
 
@@ -93,13 +92,3 @@
 
 (check 7
   (bit/size 64))
-
-(check 42
-  (lib foo
-    (var bar 42))
-
-  foo/bar)
-
-(check 1:[2 3]:[1 2 3]
-  (let [foo [1 2 3]]
-    (seq/head foo):(seq/tail foo):foo))

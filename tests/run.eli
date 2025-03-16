@@ -5,6 +5,8 @@
 (include "list-tests.eli")
 (include "map-tests.eli")
 (include "method-tests.eli")
+(include "pair-tests.eli")
+(include "quote-tests.eli")
 (include "string-tests.eli")
 (include "sym-tests.eli")
 (include "type-tests.eli")
