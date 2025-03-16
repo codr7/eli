@@ -276,6 +276,28 @@ While `is` returns `T` only if specified arguments have equal identities.
 ```
 `T`
 
+### Sequences
+`seq/head` returns the first item in a sequence, or `_` if empty.
+
+```
+(seq/head "foo")
+```
+`\f`
+
+`seq/tail` returns the tail of a sequence, or `_` if empty.
+
+```
+(seq/tail '{a:1 b:2 c:3})
+```
+`{'b:2 'c:3}`
+
+`seq/count` returns the number of items in a sequence, `#` may be used as shorthand.
+
+```
+  #7:35:42
+```
+`3`
+
 ### Iteration
 #### Imperative
 `for` repeats its body with variables bound to successive items.

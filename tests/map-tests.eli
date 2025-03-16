@@ -1,2 +1,13 @@
+(check _:_
+  (seq/head {}):(seq/tail {}))
+
+(let [foo '{a:1 b:2 c:3}]
+  (check 3
+    #foo)
+  (check 'a:1
+    (seq/head foo))
+  (check '{b:2 c:3}
+    (seq/tail foo)))
+
 (check {'foo:1 'bar:2}
   '{foo:1 bar:2})

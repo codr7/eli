@@ -1,6 +1,14 @@
-(check 3
-  #"abc")
+(check _:_
+  (seq/head ""):(seq/tail ""))
 
+(let [foo "abc"]
+  (check 3
+    #foo)
+  (check \a
+    (seq/head foo))
+  (check "bc"
+    (seq/tail foo)))
+  
 (check 12
   #"foo\nbar\"baz\\")
 

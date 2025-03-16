@@ -1,6 +1,14 @@
-(check 3
-  #[1 2 3])
-
+(check _:_
+  (seq/head []):(seq/tail []))
+  
+(let [foo [1 2 3]]
+  (check 3
+    #foo)
+  (check 1
+    (seq/head foo))
+  (check [2 3]
+    (seq/tail foo)))
+    
 (check [1 2 3]
   [[1 2]* [3]*])
 

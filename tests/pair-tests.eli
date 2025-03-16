@@ -1,3 +1,7 @@
-(check 1:[2 3]:[1 2 3]
-  (let [foo [1 2 3]]
-    (seq/head foo):(seq/tail foo):foo))
+(let [foo 7:35:42]
+  (check 3
+    #foo)
+  (check 7
+    (seq/head foo))
+  (check 35:42
+    (seq/tail foo)))
