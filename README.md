@@ -218,7 +218,7 @@ foo
 ```
 `42`
 
-`let` creates scoped runtime bindings,
+`let` may be used to create scoped runtime bindings,
 
 ```
 (let [foo 'bar]
@@ -226,7 +226,7 @@ foo
 ```
 `'bar`
 
-and may be used to locally override existing `var` bindings.
+and to locally override existing `var` bindings.
 
 ```
 (var foo 1)
@@ -616,7 +616,7 @@ test.eli:
 ```
 (dump ['foo "bar" 42])
 ```
-`['foo "bar" 42]`
+`"['foo \"bar\" 42]"`
 
 ### Testing
 `check` validates that its body produces the specified result.
