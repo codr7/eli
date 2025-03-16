@@ -1,9 +1,6 @@
 (check 3
   #[1 2 3])
 
-(check ['foo 'bar 'baz]
-  '[foo bar baz])
-
 (check [1 2 3]
   [[1 2]* [3]*])
 

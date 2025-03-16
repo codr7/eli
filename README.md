@@ -177,14 +177,30 @@ Any expression may be quoted by prefixing with `'`.
 ```
 `'(+ 1 2)`
 
-A quoted list becomes a list of quoted items.
+Quoted lists become lists of quoted items.
 
 ```
 '[foo bar baz]
 ```
 `['foo 'bar 'baz]`
 
+
+Quoted maps only quote the keys.
+
+```
+'{a:(+ 1 2) b: (+ 3 4)}
+```
+`{'a:3 'b:7}`
+
+Courtesy of pairs behaving the same way.
+
+```
+'foo:(+ 1 2)
+```
+`'foo:3`
+
 `,` unquotes the succeding form.
+
 ```
 (let [foo '(+ 1 2)]
   ,foo)

@@ -7,3 +7,12 @@
 
   (check T
     (= ,foo (unquote foo))))
+
+(check ['foo 'bar 'baz]
+  '[foo bar baz])
+
+(check 'foo:3
+  'foo:(+ 1 2))
+
+(check {'a:3 'b:7}
+  '{a:(+ 1 2) b: (+ 3 4)})
