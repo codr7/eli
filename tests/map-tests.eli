@@ -9,6 +9,9 @@
   (check '{b:2 c:3}
     (tail foo)))
 
+(check 42
+  (if {} (else 42)))
+
 (check {'foo:1 'bar:2}
   '{foo:1 bar:2})
 

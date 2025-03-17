@@ -47,7 +47,6 @@ The root of all types.
 
 #### Bit (Any)
 Bits are either true or false.
-
 `T` `F`
 
 #### Callable
@@ -61,22 +60,18 @@ The root of countable types.
 
 #### Char (Any)
 Characters.
-
 `\a`
 
 #### Expr (Any)
 Quoted expressions.
-
 `'(+ 1 2)`
 
 #### Float (Any Numeric)
 Floating point values with absolute precision.
-
 `1.23`
 
 #### Int (Any Numeric)
 64 bit integers.
-
 `42`
 
 #### Iter (Any Iterable)
@@ -90,7 +85,6 @@ Type of libraries.
 
 #### List (Any Callable Comparable Countable Iterable Sequential)
 Mutable, random access sequences of values.
-
 `[1 2 3]`
 
 #### Macro (Any Callable)
@@ -98,7 +92,6 @@ Type of macros.
 
 #### Map (Any Callable Comparable Countable Iterable Sequential)
 Mutable, ordered mappings between values.
-
 `{1:2 3:4}`
 
 #### Meta (Any)
@@ -109,7 +102,6 @@ Type of methods.
 
 #### Nil
 Missing values.
-
 `_`
 
 #### Numeric (Any Comparable)
@@ -117,22 +109,19 @@ Root of numeric types.
 
 #### Pair (Any Comparable Countable Iterable Sequential)
 Pairs of values.
-
 `1:2`
 
 #### Sequential
 Root of values with heads and tails.
 
 #### String (Any Callable Comparable Countable Iterable Sequential)
-Sequences of characters.
-
+Immutable sequences of characters.
 `"abc"`
 
 String literals support the following escapes: `\n` for line break, `"` for double quote, and `\\` for backslash.
 
 #### Sym (Any Comparable)
 Quoted identifiers.
-
 `'foo`
 
 #### Time (Any)
@@ -140,11 +129,10 @@ Durations of time.
 
 #### Timestamp (Any)
 Points in time.
-
 `(now)`
 
 ### Truthiness
-All values have `Bit` representations, most evaluate to `T`; Such values are referred to as truthy. Notable exceptions besides `F` are empty strings, lists; `0` and `_`.
+All types have `Bit` representations, most unconditionally evaluate to `T`; such values are referred to as truthy. Notable exceptions besides `F` are `[]`, `{}` and `_`.
 
 ### Branches
 `if` evaluates its body if the specified condition is truthy.

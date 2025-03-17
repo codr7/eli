@@ -8,7 +8,10 @@
     (head foo))
   (check "bc"
     (tail foo)))
-  
+
+(check 42
+  (if "" 42))
+
 (check 12
   #"foo\nbar\"baz\\")
 

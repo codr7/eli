@@ -54,6 +54,12 @@
 (check 4
   (if F 1 2 (else-if T 3 4)))
 
+(check 42
+  (if _ (else 42)))
+
+(check 42
+  (if 0 42))
+
 (check 123:4
   (parse-int " 123def"))
 
