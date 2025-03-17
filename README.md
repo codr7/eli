@@ -544,6 +544,22 @@ and the other explicit.
 f:b
 ```
 
+### Spreading
+Lists, maps and method calls support expanding iterable values in place by suffixing with `*`.
+
+```
+["abc"*]
+```
+`[\a \b \c]`
+
+Maps require pair values.
+
+```
+(let [foo "abc"]
+  {(iter/map (^[i] i:(foo i)) (range 0 3 1))*})
+```
+`{0:\a 1:\b 2:\c}`
+
 ### Type Checking
 Expressions may be suffixed with `@` to type check.
 
