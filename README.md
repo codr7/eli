@@ -3,7 +3,7 @@
 ## Introduction
 `eli` represents the culmination of more than 15 years of designing and implementing embedded Lisp interpreters in various languages.
 
-It all began with wanting a nice language for scripting a personal project, but evolved into one of the deepest rabbit holes I've had the pleasure of falling into.
+It all began with wishing for a Lispy language to script a personal project, but evolved into one of the deepest rabbit holes I've had the pleasure of falling into.
 
 ## Implementations
 
@@ -190,7 +190,7 @@ Quoted lists become lists of quoted items.
 Quoted maps only quote the keys.
 
 ```
-'{a:(+ 1 2) b: (+ 3 4)}
+'{a:(+ 1 2) b:(+ 3 4)}
 ```
 `{'a:3 'b:7}`
 
@@ -250,7 +250,7 @@ foo
 
 ```
 (let [foo 1 bar 2]
-  (set foo 2 bar 3)
+  (set foo 3 bar 4)
   foo:bar)
 ```
 `3:4`
@@ -259,20 +259,20 @@ foo
 `=` returns `T` if specified arguments have equal values.
 
 ```
-(say (= [1 2 3:4] [1 2 3:4]))
+(= [1 2 3:4] [1 2 3:4])
 ```
 `T`
 
 While `is` returns `T` only if specified arguments have equal identities.
 
 ```
-(say (is [1 2 3:4] [1 2 3:4]))
+(is [1 2 3:4] [1 2 3:4])
 ```
 `F`
 
 ```
-(var foo [1 2 3:4])
-(say (is foo foo))
+(let [foo [1 2 3:4]]
+  (is foo foo))
 ```
 `T`
 
@@ -299,7 +299,7 @@ While `is` returns `T` only if specified arguments have equal identities.
 `3`
 
 ### Iteration
-`iter/get` may be used to get an iterator; `iter/pop` returns the next item, or `_` if empty.
+`get` may be used to get an iterator; `pop` returns the next item, or `_` if empty.
 
 ```
 (let [i (iter/get '[foo bar baz])]
@@ -436,7 +436,7 @@ Final arguments suffixed with `?` are optional.
 3 _
 ```
 
-Suffixing the last argument with `*` makes the method to accept a variable number of arguments.
+Suffixing the last argument with `*` makes the method accept a variable number of arguments.
 
 ```
 (^foo [x*] 
@@ -545,7 +545,7 @@ f:b
 ```
 
 ### Type Checking
-Expressions may be suffixed with `@` to check the result type.
+Expressions may be suffixed with `@` to type check.
 
 ```
 (+ 35 7)@Numeric
@@ -632,7 +632,7 @@ test.eli:
 `42`
 
 ### Debugging
-`dump` converts its arguments to string.
+`dump` converts its arguments to readable strings.
 
 ```
 (dump ['foo "bar" 42])
@@ -640,7 +640,7 @@ test.eli:
 `"['foo \"bar\" 42]"`
 
 ### Testing
-`check` validates that its body produces the specified result.
+`check` signals an error if its body doesn't produce the specified result.
 
 ```
 (check 1 2)
@@ -650,4 +650,4 @@ Error in REPL@1:1: Check failed; expected 1, actual: 2
 ```
 
 ### Work
-Should you find yourself involved in a software project with interesting non-GenAI challenges and in need of a creative developer/tech/team lead with 40 years of solid experience from different technologies/roles/companies/countries, don't hesitate to get in [touch](mailto:codr7@protonmail.com).
+Should you find yourself involved in a software project with interesting non-GenAI challenges and in need of a creative developer/tech/team lead with 26 years of solid experience from different technologies/roles/companies/countries, don't hesitate to get in [touch](mailto:codr7@protonmail.com).
