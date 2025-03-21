@@ -19,3 +19,7 @@
   (let [foo [1 1 1]]
     (foo 1 2)
     foo))
+
+(check _:1
+  (let [foo [3 42 7]]
+    (list/find foo 35):(list/find foo 42)))
