@@ -346,6 +346,18 @@ Multiple sequences may be iterated in parallel.
 `20`
 
 #### Functional
+`all` returns `T` if all items from a set of iterables pass the predicate, otherwise `F`.
+```
+(iter/all < [1 2] [3 4])
+```
+`T`
+
+`any` returns `T` if any items from a set of iterables pass the predicate, otherwise `F`.
+```
+(iter/any > [1 2 5] [3 4 5])
+```
+`F`
+
 `comb` returns an iterator for all combinations of items in an iterable.
 ```
 [(iter/comb [1 2 3])*]

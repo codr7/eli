@@ -62,3 +62,16 @@
 
 (check [5:2 6:4]
   [(iter/where > [1 5 2 6] [1 2 3 4])*])
+
+(check T
+  (iter/all < [1 2] [3 4]))
+
+(check F
+  (iter/all < [1 4] [3 4]))
+
+(check T
+  (iter/any < [1 2] [1 3]))
+
+(check F
+  (iter/any > [1 2] [1 3]))
+
