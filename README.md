@@ -378,10 +378,10 @@ Multiple sequences may be iterated in parallel.
 ```
 `[1 2 3 4 5]`
 
-`fold` folds an iterable into a single value using the specified binary operation and seed value.
+`fold` folds a set of iterables into a value using the specified binary operation and seed value.
 ```
-(^my-sum [in*]
-  (iter/fold + in 0))
+(^my-sum [in]
+  (iter/fold + 0 in))
 
 (my-sum 1 2 3)
 ```
