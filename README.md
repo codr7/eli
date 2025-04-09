@@ -3,7 +3,7 @@
 ## Introduction
 `eli` represents the culmination of more than 15 years of designing and implementing embedded Lisp interpreters in various languages.
 
-It all began with wishing for a Lispy language to script a personal project, but evolved into one of the deepest rabbit holes I've had the pleasure of falling into.
+It all began with wishing for a nice language to script a personal project, but evolved into one of the deepest rabbit holes I've had the pleasure of falling into.
 
 ## Implementations
 
@@ -309,7 +309,7 @@ Multiple sequences may be iterated in parallel.
 ```
 (let [foo 0 bar 0]
   (iter/for [i [1 2 3]
-        j [4 5]]
+             j [4 5]]
     (inc foo i)
     (inc bar j))
 
@@ -336,7 +336,6 @@ Multiple sequences may be iterated in parallel.
     (break (* foo 2))))
 ```
 `20`
-
 
 ### Iterators
 `get` may be used to acquire an iterator for any iterable value. `pop` returns the next item or `_`.
