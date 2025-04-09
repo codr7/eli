@@ -101,3 +101,24 @@
 
 (check 7
   (bit/size 64))
+
+(check 10
+  (let [foo 0]
+    (loop
+      (if (= (inc foo) 10)
+        (break)))
+    foo))
+
+(check 20
+  (let [foo 0]
+    (loop
+      (if (= (inc foo) 10)
+        (break 1 2 (* foo 2))))))
+
+(check 10
+  (let [foo 0]
+    (loop
+      (if (< (inc foo) 10)
+        (next))
+
+      (break foo))))

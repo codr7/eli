@@ -2,26 +2,6 @@
   (let [i (iter/get '[foo bar baz])]
   (iter/pop i)))
   
-(check 10
-  (let [foo 0]
-    (iter/while (< foo 10)
-      (inc foo))
-    foo))
-
-(check 20
-  (let [foo 0]
-    (iter/while T
-      (if (= (inc foo) 10)
-        (break 1 2 (* foo 2))))))
-
-(check 10
-  (let [foo 0]
-    (iter/while T
-      (if (< (inc foo) 10)
-        (next))
-
-      (break foo))))
-
 (let [foo 0]
   (iter/for [i [1 2 3]
         j [4 5]]

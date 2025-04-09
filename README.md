@@ -286,17 +286,17 @@ While `is` returns `T` only if specified arguments have equal identities.
 ```
 `3`
 
-### Iteration
-`get` may be used to get an iterator; `pop` returns the next item, or `_` if empty.
+### Loops
+`loop` repeats its body indefinitely.
 
 ```
-(let [i (iter/get '[foo bar baz])]
-  (iter/pop i))
+(let [foo 0]
+  (loop
+    (if (= (inc foo) 10) (break foo))))
 ```
-`'foo`
+`10`
 
-#### Imperative
-`for` repeats its body with variables bound to successive items.
+`for` repeats its body with variables bound to successive items from an iterable.
 ```
 (let [foo 0]
   (iter/for [i [1 2 3]
@@ -317,18 +317,10 @@ Multiple sequences may be iterated in parallel.
 ```
 `6:9`
 
-`while` repeats its body as long as the specified condition is truthy.
-```
-(let [foo 0]
-  (iter/while (< foo 10)
-    (inc foo))
-  foo)
-```
-
 `break` evaluates its arguments and jumps to the end of the loop.
 ```
 (let [foo 0]
-  (iter/while T
+  (loop T
     (if (= (inc foo) 10)
       (break (* foo 2)))))
 ```
@@ -337,7 +329,7 @@ Multiple sequences may be iterated in parallel.
 `next` evaluates its arguments and jumps to the start of next iteration.
 ```
 (let [foo 0]
-  (iter/while T
+  (loop
     (if (< (inc foo) 10)
       (next))
       
@@ -345,7 +337,17 @@ Multiple sequences may be iterated in parallel.
 ```
 `20`
 
-#### Functional
+
+### Iterators
+`get` may be used to acquire an iterator for any iterable value. `pop` returns the next item or `_`.
+
+```
+(let [i (iter/get '[foo bar baz])]
+  (iter/pop i))
+```
+`'foo`
+
+#### Pipelines
 `all` returns `T` if all items from a set of iterables pass the predicate, otherwise `F`.
 ```
 (iter/all < [1 2] [3 4])
